@@ -5,7 +5,8 @@
 </head>
 
 <body>
-<h1 class="title">Haydn Work Index 0</h1>
+
+<h1 class="title">Haydn Work Index 1</h1>
 
 <div id="chart"></div>
 
@@ -18,33 +19,21 @@ body {
 
 .title {
     margin-top: 20px;
-    margin-bottom: 100px;
-}
-
-.opus-rect {
-    fill: #eee;
-    stroke: #aaa;
-    stroke-width: 1;
+    margin-bottom: 10px;
 }
 
 rect {
     shape-render: crispEdges;
 }
 
-.quartet-rect {
-    fill: #eee;
+.quartet-line {
+  stroke: #D0D0D0;
+  stroke-width: 1.0;
 }
 
-.quartet-rect:hover {
-    fill: #FF4C00;
-}
-
-.quartet-rect-played {
-    fill: #2B77B5;
-}
-
-.quartet-rect-played:hover {
-    fill: #FF4C00;
+.quartet-line-played {
+  stroke: #FF7878;
+  stroke-width: 1.0;
 }
 
 .d3-tip {
@@ -82,13 +71,39 @@ rect {
 
 d3.json("data.json", function(site_data) {
 
-  // helper
+  // helpers
   function translate(x, y) {
       return 'translate(' + x + ',' + y + ')';
   }
 
+  function dictValues(d) {
+    var values = []
+    for (key in d) {
+      values.push(d[key]);
+    }
+    return values;
+  }
+
+  function diff(arr) {
+    if (arr.length <=1) {
+      return arr;
+    }
+    diff_array = [];
+    for (var i = 1; i < arr.length; i++) {
+      diff_array.push(arr[i] - arr[i-1]);
+    }
+    return diff_array;
+  }
+
+  function accum(arr) {
+    var accum_arr = [0];
+    for (var i = 0; i < arr.length; i++) {
+      accum_arr.push(arr[i] + accum_arr[i]);
+    }
+    return accum_arr;
+  }
+
   var quartets = site_data.quartets;
-  var opus_keys = Object.keys(quartets).sort();
 
   // annotate the ones we've played
   site_data.events.forEach(function(d) {
@@ -97,26 +112,41 @@ d3.json("data.json", function(site_data) {
     });
   });
 
-  var quartet_list = opus_keys.map(function(key){
+  var quartet_list = Object.keys(quartets).sort().map(function(key){
       quartets[key].id = key;
       return quartets[key];
   });
 
-  var nested_quartets = d3.nest()
+  nested_quartets = d3.nest()
                           .key(function(d) {return d.opus; })
                           .entries(quartet_list);
 
   var opus_lengths = nested_quartets.map(function(d) {return d.values.length;});
-  var offsets = [0]
-  for (var i = 1; i < opus_lengths.length; i++) {
-      offsets[i] = offsets[i-1] + opus_lengths[i-1];;
-  }
+
+  var offsets = accum(opus_lengths);
+
+  var years = dictValues(site_data.opus_completion_year).sort();
+  var date_spacings = accum(diff(years));
+
+  /* parameters */
+
+  var yr_spacing = 10; // pixels per year in this space
 
   var width = 1200;
   var height = 200;
 
-  var barHeight = 15;
-  var barWidth = 15;
+  var opusSpacing = 20;
+  var lineSpacing = 3;
+  var lineHeight = 30;
+  var minSpacing = 4;
+
+  /*  --- */
+
+
+  var extent = d3.extent(quartet_list, function(d) {return d.measures;});
+  var scale = d3.scale.linear()
+                .domain(extent)
+                .range([0.3 * lineHeight, lineHeight]);
 
   var tip = d3.tip()
     .attr('class', 'd3-tip')
@@ -132,10 +162,12 @@ d3.json("data.json", function(site_data) {
       return name;
     });
 
+
   var svg = d3.select('#chart').append('svg')
                           .attr('width', width)
                           .attr('height', height)
                           .append('g')
+                          .attr('transform', translate(0, 20));
 
   svg.call(tip);
 
@@ -144,47 +176,39 @@ d3.json("data.json", function(site_data) {
       .data(nested_quartets)
       .enter().append('g')
       .attr('transform', function(d, i) {
-          return translate(offsets[i] * barWidth + 0.5, 0)
+          return translate(offsets[i] * lineSpacing + 0.5 + (date_spacings[i] * yr_spacing) + (i * minSpacing), 0);
       });
-
-  opus_boxes.append('rect')
-      .attr('class', 'opus-rect')
-      .attr("height", barHeight)
-      .attr("width", function(d) {
-          return d.values.length * barWidth;
-      })
-      .attr("x", 0)
-      .attr("y", 0.5);
 
   opus_boxes.append('text')
       .text(function(d) {
           return d.key;
       })
       .attr('font-size', 10)
-      .attr("x", 1)
-      .attr("y", barHeight + 10);
-
-  var quartet_box = opus_boxes.selectAll('g.quartet-rect')
-      .data(function(d) {return d.values; })
-      .enter().append('g')
-      .attr('transform', function(d, i) {
-          return translate(i * barWidth + 0.5, 0)
-      });
-
-  quartet_box.append('rect')
-      .attr("height", function(d, i) {
-          return barHeight;
-      })
-      .attr("class", function(d) {
-          if (d.played) {
-              return 'quartet-rect-played';
-          } else {
-              return 'quartet-rect';
-          }
-      })
-      .attr("width", barWidth)
       .attr("x", 0)
-      .attr("y", 0.5)
+      .attr("y", lineHeight + 10);
+
+  var quartet_box = opus_boxes.selectAll('line')
+      .data(function(d) {return d.values; })
+      .enter().append('line')
+      .attr("class", function(d, i) {
+        if (d.played) {
+          return "quartet-line-played";
+        } else {
+          return "quartet-line";
+        }
+      })
+      .attr("y1", function(d) {
+        return (lineHeight - scale(d.measures));
+      })
+      .attr("y2", function(d) {
+        return lineHeight;
+      })
+      .attr("x1", function(d, i) {
+        return i * lineSpacing;
+      })
+      .attr("x2", function(d, i) {
+        return i * lineSpacing;
+      })
       .on("mouseover", tip.show)
       .on('mouseout', tip.hide);
 
