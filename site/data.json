@@ -2,7 +2,7 @@
     "events": [
         {
             "title": "The Haydn Enthusiasts Present",
-            "people": ["Andrew Wong", "Jason Sundram", "Elaine Leisinger", "Lewis Patzner"],
+            "people": ["Andrew Wong", "Jason Sundram", "Korbinian Reidhammer", "Lewis Patzner"],
             "quartets": ["055_1", "055_2", "055_3"],
             "date": "07/18/2013",
             "event_link": "",
@@ -13,7 +13,7 @@
         {
             "title": "Concert 2: Opus 54",
             "people": ["Andrew Wong", "Jason Sundram", "Elaine Leisinger", "Lewis Patzner"],
-            "quartets": ["055_1", "055_2", "055_3"],
+            "quartets": ["054_1", "054_2", "054_3"],
             "date": "08/15/2013",
             "event_link": "https://www.facebook.com/events/397473983698099/",
             "description": "The first in a set of quartets dedicated to the violinist Johann Tost, these are some of Haydn's most interesting quartets with some virtuosic violin writing.",
