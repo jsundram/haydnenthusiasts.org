@@ -1,4 +1,4 @@
 haydnenthusiasts.org
 ====================
 
-Haydn Enthusiasts website. Vist it.
+Haydn Enthusiasts website. Visit it.
