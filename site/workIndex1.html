@@ -36,6 +36,13 @@ rect {
   stroke-width: 1.0;
 }
 
+.handle {
+  stroke-wdith: 1.0;
+  stroke: none;
+  fill: #fff;
+  opacity: 0;
+}
+
 .d3-tip {
   line-height: 1;
   font-size: 8px;
@@ -208,9 +215,25 @@ d3.json("data.json", function(site_data) {
       })
       .attr("x2", function(d, i) {
         return i * lineSpacing;
-      })
-      .on("mouseover", tip.show)
-      .on('mouseout', tip.hide);
+      });
+
+  // handles so mouse hovering is easier
+  opus_boxes.selectAll('rect')
+    .data(function(d) {return d.values; })
+    .enter().append('rect')
+    .attr("class", "handle")
+    .attr("height", function(d) {
+      return scale(d.measures);
+    })
+    .attr("width", lineSpacing)
+    .attr("x", function(d, i) {
+      return i * lineSpacing - (lineSpacing / 2.0);
+    })
+    .attr("y", function(d) {
+      return lineHeight - scale(d.measures);
+    })
+    .on("mouseover", tip.show)
+    .on('mouseout', tip.hide);
 
 });
 
