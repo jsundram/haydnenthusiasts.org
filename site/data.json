@@ -57,7 +57,7 @@
         },
         {
             "title": "How do you do",
-            "people": ["Yuri Kye", "Jason Sundram", "Elaine Leisinger", "Jen Adler Mathers"],
+            "people": ["Yuri Kye", "Jason Sundram", "Elaine Leisinger", "Jen Mathers"],
             "quartets": ["033_5", "064_4"],
             "date": "01/16/2014",
             "event_link": "https://www.facebook.com/events/592934087442729/",
@@ -66,7 +66,7 @@
         },
         {
             "title": "(Don't) B-minor",
-            "people": ["Andrew Wong", "Jason Sundram", "Kevin Jim", "Jen Adler Mathers"],
+            "people": ["Andrew Wong", "Jason Sundram", "Kevin Jim", "Jen Mathers"],
             "quartets": ["033_1", "064_2"],
             "date": "02/20/2014",
             "event_link":"https://www.facebook.com/events/1455754157985945/",
@@ -81,6 +81,33 @@
             "event_link": "https://www.facebook.com/events/255943564569449/",
             "description":"Continuing our \"sister opus\" pairings of Opus 33 (1781) and Opus 64 (1790), we bring you two B-flat Major quartets, Opus 33#4 and Opus 64#3. We have unofficially nicknamed Opus 33 #4 \"The Jackalope's Progress\". If you have nickname suggestions, we would love to hear them.",
             "photo":"https://scontent-b.xx.fbcdn.net/hphotos-ash3/t1/1604503_619736314748758_706823701_n.jpg"
+        },
+        {
+            "title": "The First Bird of Spring",
+            "people": ["Andrew Wong", "Jason Sundram", "Korbinian Reidhammer", "Nicole Boguslaw"],
+            "quartets": ["033_3", "064_1"],
+            "date": "04/17/2014",
+            "event_link": "https://www.facebook.com/events/624039517632777/",
+            "description": "Continuing our \"sister opus\" pairings of Opus 33 (1781) and Opus 64 (1790), we bring you two C Major quartets, Opus 33 #3 \"The Bird\" and Opus 64#1. \n\nIf you have nickname suggestions for Opus 64 #1, which sadly lacks a nickname, we would love to hear them!",
+            "photo": "https://fbcdn-sphotos-g-a.akamaihd.net/hphotos-ak-prn1/t1.0-9/1558542_10201919440687943_4763955592659103959_n.jpg"
+        },
+        {
+            "title": "On a Lark",
+            "people": ["Andrew Wong", "Jason Sundram", "Evan Buttemer", "Nicole Boguslaw"],
+            "quartets": ["033_6", "064_5"],
+            "date": "05/15/2014",
+            "event_link": "https://www.facebook.com/events/1450691591810073/",
+            "description": "Last month, we brought you \"The first Bird of Spring\". This month, we follow it up with the second bird of (this) spring, and one of Haydn's most famous quartets, \"The Lark\".\n\nThis program continues our \"sister opus\" pairings of Opus 33 (1781) and Opus 64 (1790), bringing you two D Major quartets, Opus 33 #6 and Opus 64 #5 \"The Lark\".",
+            "photo": "https://scontent-b.xx.fbcdn.net/hphotos-ash3/t31.0-8/1487723_604448939610829_544984378_o.jpg"
+        },
+        {
+            "title": "Joking Around",
+            "people": ["Andrew Wong", "Jason Sundram", "Elaine Leisinger", "Nicole Boguslaw"],
+            "quartets": ["033_2", "064_6"],
+            "date": "05/19/2014",
+            "event_link": "https://www.facebook.com/events/656286504418315/",
+            "description": "Continuing our \"sister opus\" pairings of Opus 33 (1781) and Opus 64 (1790), we bring you two E-flat Major quartets, Opus 33 #2 \"The Joke\" and Opus 64 #6." ,
+            "photo": "https://scontent-b.xx.fbcdn.net/hphotos-ash3/t31.0-8/1487723_604448939610829_544984378_o.jpg"
         }
     ],
 
@@ -667,64 +694,64 @@
     },
     "performers": {
         "Andrew Wong": {
-            "blurb": "Before they sold out Marfa biodiesel, Pitchfork hella fixie raw denim locavore Neutra try-hard vegan. Pickled freegan cardigan try-hard polaroid, retro chia paleo food truck Tonx pug cray. Thundercats pickled twee, actually Godard 3 wolf moon you probably haven't heard of them VHS pork belly typewriter bitters sustainable. Asymmetrical +1 farm-to-table, DIY umami Williamsburg Intelligentsia quinoa. Carles Godard Odd Future Cosby sweater keffiyeh Neutra. YOLO small batch mlkshk roof party. Bushwick chia semiotics American Apparel swag, stumptown raw denim church-key occupy Pitchfork aesthetic hella yr banh mi.",
+            "blurb": "Andrew is a cofounder of the Haydn Enthusiasts and an Engineer at Postmates.",
             "instrument": "Violin",
-            "photo": "photo.jpg"
+            "photo": "Andrew Wong.jpg"
         },
         "Jason Sundram": {
-            "blurb": "Before they sold out Marfa biodiesel, Pitchfork hella fixie raw denim locavore Neutra try-hard vegan. Pickled freegan cardigan try-hard polaroid, retro chia paleo food truck Tonx pug cray. Thundercats pickled twee, actually Godard 3 wolf moon you probably haven't heard of them VHS pork belly typewriter bitters sustainable. Asymmetrical +1 farm-to-table, DIY umami Williamsburg Intelligentsia quinoa. Carles Godard Odd Future Cosby sweater keffiyeh Neutra. YOLO small batch mlkshk roof party. Bushwick chia semiotics American Apparel swag, stumptown raw denim church-key occupy Pitchfork aesthetic hella yr banh mi.",
+            "blurb": "Jason is a Quantitative Engineer at Facebook, where he creates visualization applications to yield insights from petabytes of data. Before that, he was a Senior Data Scientist at PayPal, where he analyzed and visualized geo data. He is an avid violinist and chamber musician and cofounder of The Haydn Enthusiasts. He spends a lot of time exploring integrations of his passion for classical music with data visualization.",
             "instrument": "Violin",
-            "photo": "photo.jpg"
+            "photo": "Jason Sundram.jpg"
         },
         "Elaine Leisinger": {
-            "blurb": "Before they sold out Marfa biodiesel, Pitchfork hella fixie raw denim locavore Neutra try-hard vegan. Pickled freegan cardigan try-hard polaroid, retro chia paleo food truck Tonx pug cray. Thundercats pickled twee, actually Godard 3 wolf moon you probably haven't heard of them VHS pork belly typewriter bitters sustainable. Asymmetrical +1 farm-to-table, DIY umami Williamsburg Intelligentsia quinoa. Carles Godard Odd Future Cosby sweater keffiyeh Neutra. YOLO small batch mlkshk roof party. Bushwick chia semiotics American Apparel swag, stumptown raw denim church-key occupy Pitchfork aesthetic hella yr banh mi.",
+            "blurb": "Elaine is a cofounder of the Haydn Enthusiasts, an avid musician, and a professor of mathematics at UMass Boston.",
             "instrument": "Viola",
-            "photo": "photo.jpg"
+            "photo": "Elaine Leisinger.jpg"
         },
         "Lewis Patzner": {
-            "blurb": "Before they sold out Marfa biodiesel, Pitchfork hella fixie raw denim locavore Neutra try-hard vegan. Pickled freegan cardigan try-hard polaroid, retro chia paleo food truck Tonx pug cray. Thundercats pickled twee, actually Godard 3 wolf moon you probably haven't heard of them VHS pork belly typewriter bitters sustainable. Asymmetrical +1 farm-to-table, DIY umami Williamsburg Intelligentsia quinoa. Carles Godard Odd Future Cosby sweater keffiyeh Neutra. YOLO small batch mlkshk roof party. Bushwick chia semiotics American Apparel swag, stumptown raw denim church-key occupy Pitchfork aesthetic hella yr banh mi.",
+            "blurb": "Lewis is an Oakland-based cellist and cofounder of the Haydn Enthusiasts.",
             "instrument": "Cello",
-            "photo": "photo.jpg"
+            "photo": "Lewis Patzner.jpg"
         },
         "Korbinian Reidhammer": {
-            "blurb": "Before they sold out Marfa biodiesel, Pitchfork hella fixie raw denim locavore Neutra try-hard vegan. Pickled freegan cardigan try-hard polaroid, retro chia paleo food truck Tonx pug cray. Thundercats pickled twee, actually Godard 3 wolf moon you probably haven't heard of them VHS pork belly typewriter bitters sustainable. Asymmetrical +1 farm-to-table, DIY umami Williamsburg Intelligentsia quinoa. Carles Godard Odd Future Cosby sweater keffiyeh Neutra. YOLO small batch mlkshk roof party. Bushwick chia semiotics American Apparel swag, stumptown raw denim church-key occupy Pitchfork aesthetic hella yr banh mi.",
+            "blurb": "Korbinian works as a speech technologist, flies high in the sky, and grounds himself in music. He plays violin and viola.",
             "instrument": "Viola",
-            "photo": "photo.jpg"
+            "photo": "Korbinian Reidhammer.jpg"
         },
-        "Gabriel Beistline": {
-            "blurb": "Before they sold out Marfa biodiesel, Pitchfork hella fixie raw denim locavore Neutra try-hard vegan. Pickled freegan cardigan try-hard polaroid, retro chia paleo food truck Tonx pug cray. Thundercats pickled twee, actually Godard 3 wolf moon you probably haven't heard of them VHS pork belly typewriter bitters sustainable. Asymmetrical +1 farm-to-table, DIY umami Williamsburg Intelligentsia quinoa. Carles Godard Odd Future Cosby sweater keffiyeh Neutra. YOLO small batch mlkshk roof party. Bushwick chia semiotics American Apparel swag, stumptown raw denim church-key occupy Pitchfork aesthetic hella yr banh mi.",
-            "instrument": "Cello",
-            "photo": "photo.jpg"
-        },
-        "Clio Tilton": {
-            "blurb": "Before they sold out Marfa biodiesel, Pitchfork hella fixie raw denim locavore Neutra try-hard vegan. Pickled freegan cardigan try-hard polaroid, retro chia paleo food truck Tonx pug cray. Thundercats pickled twee, actually Godard 3 wolf moon you probably haven't heard of them VHS pork belly typewriter bitters sustainable. Asymmetrical +1 farm-to-table, DIY umami Williamsburg Intelligentsia quinoa. Carles Godard Odd Future Cosby sweater keffiyeh Neutra. YOLO small batch mlkshk roof party. Bushwick chia semiotics American Apparel swag, stumptown raw denim church-key occupy Pitchfork aesthetic hella yr banh mi.",
+        "Ivo Bokulic": {
+            "blurb": "",
             "instrument": "Viola",
-            "photo": "photo.jpg"
-        },
-        "Ivo Bokulić": {
-            "blurb": "Before they sold out Marfa biodiesel, Pitchfork hella fixie raw denim locavore Neutra try-hard vegan. Pickled freegan cardigan try-hard polaroid, retro chia paleo food truck Tonx pug cray. Thundercats pickled twee, actually Godard 3 wolf moon you probably haven't heard of them VHS pork belly typewriter bitters sustainable. Asymmetrical +1 farm-to-table, DIY umami Williamsburg Intelligentsia quinoa. Carles Godard Odd Future Cosby sweater keffiyeh Neutra. YOLO small batch mlkshk roof party. Bushwick chia semiotics American Apparel swag, stumptown raw denim church-key occupy Pitchfork aesthetic hella yr banh mi.",
-            "instrument": "Viola",
-            "photo": "photo.jpg"
-        },
-        "Yuri Kye": {
-            "blurb": "Before they sold out Marfa biodiesel, Pitchfork hella fixie raw denim locavore Neutra try-hard vegan. Pickled freegan cardigan try-hard polaroid, retro chia paleo food truck Tonx pug cray. Thundercats pickled twee, actually Godard 3 wolf moon you probably haven't heard of them VHS pork belly typewriter bitters sustainable. Asymmetrical +1 farm-to-table, DIY umami Williamsburg Intelligentsia quinoa. Carles Godard Odd Future Cosby sweater keffiyeh Neutra. YOLO small batch mlkshk roof party. Bushwick chia semiotics American Apparel swag, stumptown raw denim church-key occupy Pitchfork aesthetic hella yr banh mi.",
-            "instrument": "Violin",
-            "photo": "photo.jpg"
-        },
-        "Jen Adler Mathers": {
-            "blurb": "Before they sold out Marfa biodiesel, Pitchfork hella fixie raw denim locavore Neutra try-hard vegan. Pickled freegan cardigan try-hard polaroid, retro chia paleo food truck Tonx pug cray. Thundercats pickled twee, actually Godard 3 wolf moon you probably haven't heard of them VHS pork belly typewriter bitters sustainable. Asymmetrical +1 farm-to-table, DIY umami Williamsburg Intelligentsia quinoa. Carles Godard Odd Future Cosby sweater keffiyeh Neutra. YOLO small batch mlkshk roof party. Bushwick chia semiotics American Apparel swag, stumptown raw denim church-key occupy Pitchfork aesthetic hella yr banh mi.",
-            "instrument": "Cello",
-            "photo": "photo.jpg"
-        },
-        "Kevin Jim": {
-            "blurb": "Before they sold out Marfa biodiesel, Pitchfork hella fixie raw denim locavore Neutra try-hard vegan. Pickled freegan cardigan try-hard polaroid, retro chia paleo food truck Tonx pug cray. Thundercats pickled twee, actually Godard 3 wolf moon you probably haven't heard of them VHS pork belly typewriter bitters sustainable. Asymmetrical +1 farm-to-table, DIY umami Williamsburg Intelligentsia quinoa. Carles Godard Odd Future Cosby sweater keffiyeh Neutra. YOLO small batch mlkshk roof party. Bushwick chia semiotics American Apparel swag, stumptown raw denim church-key occupy Pitchfork aesthetic hella yr banh mi.",
-            "instrument": "Viola",
-            "photo": "photo.jpg"
+            "photo": "Ivo Bokulic.jpg"
         },
         "Nicole Boguslaw": {
-            "blurb": "Before they sold out Marfa biodiesel, Pitchfork hella fixie raw denim locavore Neutra try-hard vegan. Pickled freegan cardigan try-hard polaroid, retro chia paleo food truck Tonx pug cray. Thundercats pickled twee, actually Godard 3 wolf moon you probably haven't heard of them VHS pork belly typewriter bitters sustainable. Asymmetrical +1 farm-to-table, DIY umami Williamsburg Intelligentsia quinoa. Carles Godard Odd Future Cosby sweater keffiyeh Neutra. YOLO small batch mlkshk roof party. Bushwick chia semiotics American Apparel swag, stumptown raw denim church-key occupy Pitchfork aesthetic hella yr banh mi.",
+            "blurb": "",
             "instrument": "Cello",
-            "photo": "photo.jpg"
+            "photo": "Nicole Boguslaw.jpg"
+        },
+        "Yuri Kye": {
+            "blurb": "Yuri is an active freelance violinist, pianist, chamber musician, and instructor. She began her piano and theory training at age 5 and went onto study with Dr. Lawrence Anderson at Idaho State University age 11. She was a prize winner at Idaho Music Teachers' National Association's Staste Competition in 1998. Yuri has served as pianist and organists for various organizations, and currently does so as a subsitute at Park Presidio United Methodist Church. Yuri continued training on the organ and baroque literature with Dr. Anderson through middle school, during which she began violin lesson at the age of 12 with Janet Snyder in Idaho Falls, Idaho. Yuri won many local scholarship competitions during her early years of violinst studies, eventually being selected to study with Professor Fritz Gearhart at University of Oregon through Oregon Festival of American Music's student program Northwest Advanced String camp in 2001 and 2002. During high school Yuri was concertmaster of Idaho All State\nOrchestra, and participated in All-Northwest Honor Orchestra, which selects its members from top musicians in the six northwest states. She also won the Idaho State Solo Competition on violin and viola in 2002 and 2003, and received full scholarships to several colleges and unversities. Yuri attended University of Utah where she studied political science, and chamber music with Professor Mikhail Boguslavsky and was a member of the University's honor quartet program. Currently Yuri maintains an active private studio of over two dozen students, performs with the Chabot Chamber Music Society in Oakland, performs regularly with Classical Revolution, and appears\nwith various regional orchestras and opera companies. She is an active session musician and has recorded for Jennifer Hudson, Nataly Dawn, The Golden Hearts, and Naked Fiction and has shared the stage with prominent indie rock acts such as The Album Leaf and Jarrod Gorbel.",
+            "instrument": "Violin",
+            "photo": "Yuri Kye.jpg"
+        },
+        "Kevin Jim": {
+            "blurb": "Kevin Jim began playing the viola at Herbert Hoover Middle School, San Francisco. He was a scholarship student at the San Francisco Conservatory of Music, Preparatory Division, where he studied with Susan Bates. He was the principal violist with the San Francisco Symphony Youth Orchestra. While pursuing his bachelor's and master's degrees in civil and environmental engineering at the University of California at Berkeley and the University of Illinois at Urbana-Champaign, Kevin continued his viola studies with Basil Vendryes, Gina Feinauer, Paul Yarbrough and Rudolf Haken. He has participated in the Mendocino Music Festival, Aria International Music Academy, the Quartet Program, Summer Music West, and Junior Bach Festival. Kevin has recently spent 3 years working in Hong Kong, during which time he performed with the Hong Kong Chamber Orchestra, the City Chamber Orchestra of Hong Kong, and the Hong Kong Sinfonietta.",
+            "instrument": "Viola",
+            "photo": "Kevin Jim.jpg"
+        },
+        "Gabriel Beistline": {
+            "blurb": "Gabriel's first introduction to the cello wasn't until the age of fifteen. However, he quickly found himself collaborating with some of the most prominent and influential musicians of our time, including Christoph Eschenbach, Yutaka Sado, Yo-Yo Ma, Christopher Hogwood, Kent Nagano, Yakov Kreitzberg and Valery Gergiev.  He has toured with orchestras throughout the United States, Germany, Lithuania, Armenia, Russia and Japan. Gabriel has also enjoyed many experiences as a chamber musician, including a performance of Felix Mendelssohn's String Octet with acclaimed violin virtuoso Cho Liang-Lin, along with James Dunham of the distinguished Cleveland Quartet, and Lynn Harrell among others, in a concert series commemorating the 200th birthday of the composer. Gabriel holds a BM from the New England Conservatory under the instruction of Yeesun Kim, cellist in the acclaimed Borromeo String Quartet.  He also holds an MM from Rice University's Shepherd School of Music under the professorship of world-renowned soloist Lynn Harrell.",
+            "instrument": "Cello",
+            "photo": "Gabriel Beistline.jpg"
+        },
+        "Clio Tilton": {
+            "blurb": "Freelance violist and violinist Clio Tilton delights in the diversity and excitement in her career. Seeking to share her gifts both through teaching and performing, she can be heard around the Bay Area in a wide range of groups: early music ensembles, symphony orchestras, chamber groups, and bands. As a modern violist Clio performs regularly as a substitute with the San Francisco Symphony, the San Francisco Chamber Orchestra, Magik Magik Orchestra, as well as other regional orchestras. Sought after as a chamber musician, Clio has performed with the Friction Quartet, Classical Revolution, and is a member of the Americana Orchestra and of the Chamber Music Society of San Francisco. She has recorded for Time Warner with the Camerata de Lausanne, and has also been heard in recordings with Shajarian, Geographer, and Meklit. An early music specialist, Clio performs with the American Bach Soloists, the San Francisco Bach Choir, Jubilate Orchestra, and Musa. She has performed in the past with European ensembles including the Wallfisch Band and the baroque orchestra of the Paris Conservatory, and was selected to be an intern with the French baroque orchestra Les Arts Florissants. Chamber music has always been, and continues to be, a central part of Clio's musical pursuits. She spent three summers at the prestigious Kneisel Hall Chamber Music Festival in Maine during college, and has coached chamber music with the Juilliard String Quartet, Misha Amory of the Brentano Quartet, and Sylvia Rosenberg. During her time at Juilliard she was a member of the award-winning Calla Quartet. In Europe she performed at the THY festival, and most recently has become passionate about finding ways to share chamber music with audiences on a deeply personal level through her work with the Chamber Music Society of San Francisco.",
+            "instrument": "Viola",
+            "photo": "Clio Tilton.jpg"
+        },
+        "Jen Mathers": {
+            "blurb": "Jen is a cellist and pianist who studied music and environmental sciences at Northwestern University, and received a Masters in Environmental Management from Yale's School of Forestry and Environmental Studies.  She has played in orchestras and chamber music ensembles for over 20 years, including at the Kennedy Center, Fischoff national chamber music competition, and countless weddings, parties, musical theater productions, and late night chamber jams.  She has studied cello with Hans J\u00f8rgen Jensen at Northwestern and Yvonne Caruthers of the National Symphony Orchestra.  She is currently principal cellist for Symphony Parnassus in San Francisco and the Solano Symphony, and has performed professionally with many other orchestras such as the Napa Valley Symphony, Livermore Valley Opera, Berkeley Community Chorus & Orchestra, Viva la Musica, and Bay Area Classical Harmonies.  She also performs regularly with Classical Revolution and chamber music concerts with other Bay Area Strings musicians.",
+            "instrument": "Cello",
+            "photo": "Jen Mathers.jpg"
         }
     }
 }
