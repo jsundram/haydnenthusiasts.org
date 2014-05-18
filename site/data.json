@@ -93,7 +93,7 @@
         },
         {
             "title": "On a Lark",
-            "people": ["Andrew Wong", "Jason Sundram", "Evan Buttemer", "Nicole Boguslaw"],
+            "people": ["Andrew Wong", "Jason Sundram", "Elaine Leisinger", "Nicole Boguslaw"],
             "quartets": ["033_6", "064_5"],
             "date": "05/15/2014",
             "event_link": "https://www.facebook.com/events/1450691591810073/",
@@ -104,7 +104,7 @@
             "title": "Joking Around",
             "people": ["Andrew Wong", "Jason Sundram", "Elaine Leisinger", "Nicole Boguslaw"],
             "quartets": ["033_2", "064_6"],
-            "date": "05/19/2014",
+            "date": "06/19/2014",
             "event_link": "https://www.facebook.com/events/656286504418315/",
             "description": "Continuing our \"sister opus\" pairings of Opus 33 (1781) and Opus 64 (1790), we bring you two E-flat Major quartets, Opus 33 #2 \"The Joke\" and Opus 64 #6." ,
             "photo": "https://scontent-b.xx.fbcdn.net/hphotos-ash3/t31.0-8/1487723_604448939610829_544984378_o.jpg"
@@ -288,7 +288,7 @@
             "hoboken": 26,
             "key": "F",
             "measures": 420,
-            "nickname": ["sunshine","wiggles"],
+            "nickname": ["Sunshine","Wiggles"],
             "opus": 17
         },
         "017_3": {
@@ -296,7 +296,7 @@
             "hoboken": 27,
             "key": "Eb",
             "measures": 318,
-            "nickname": ["double-trill"],
+            "nickname": ["Double-Trill"],
             "opus": 17
         },
         "017_4": {
@@ -344,7 +344,7 @@
             "hoboken": 33,
             "key": "g",
             "measures": 575,
-            "nickname": ["the Squawk"],
+            "nickname": ["The Squawk"],
             "opus": 20
         },
         "020_4": {
@@ -376,7 +376,7 @@
             "hoboken": 37,
             "key": "b",
             "measures": 439,
-            "nickname": ["b ambiguous"],
+            "nickname": ["B Ambiguous"],
             "opus": 33
         },
         "033_2": {
@@ -456,7 +456,7 @@
             "hoboken": 47,
             "key": "f#",
             "measures": 439,
-            "nickname": [""],
+            "nickname": ["The Shrimp"],
             "opus": 50
         },
         "050_5": {
@@ -488,7 +488,7 @@
             "hoboken": 57,
             "key": "C",
             "measures": 480,
-            "nickname": ["The Rabbi", "The Gypsy", "The Oh Shit"],
+            "nickname": ["The Rabbi", "The Gypsy", "The Oh Sh-t"],
             "opus": 54
         },
         "054_3": {
@@ -576,7 +576,7 @@
             "hoboken": 69,
             "key": "Bb",
             "measures": 517,
-            "nickname": ["app-on-yi-quar-tet"],
+            "nickname": ["App-on-yi-Quar-tet"],
             "opus": 71
         },
         "071_2": {
@@ -584,7 +584,7 @@
             "hoboken": 70,
             "key": "D",
             "measures": 367,
-            "nickname": ["popcorn"],
+            "nickname": ["Popcorn"],
             "opus": 71
         },
         "071_3": {
@@ -592,7 +592,7 @@
             "hoboken": 71,
             "key": "Eb",
             "measures": 676,
-            "nickname": ["Thou shalt not trill", "Twinkletoes", "brandenberg"],
+            "nickname": ["Thou shalt not trill", "Twinkletoes", "Brandenberg"],
             "opus": 71
         },
         "074_1": {
@@ -600,7 +600,7 @@
             "hoboken": 72,
             "key": "C",
             "measures": 726,
-            "nickname": ["chromatic scales"],
+            "nickname": ["Chromatic Scales"],
             "opus": 74
         },
         "074_2": {
@@ -664,7 +664,7 @@
             "hoboken": 80,
             "key": "Eb",
             "measures": 661,
-            "nickname": ["Scales to neverland"],
+            "nickname": ["Scales to Neverland"],
             "opus": 76
         },
         "077_1": {
