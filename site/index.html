@@ -1,24 +1,481 @@
+<!doctype html>
 <html>
+<head>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+</head
 <body>
+
 <style>
-p {
-    font-family: Garamond, Baskerville, "Baskerville Old Face", "Hoefler Text", "Times New Roman", serif;
-    color: #aaa;
-    text-align: center;
+body {
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    color: #333;
 }
+
 #haydn {
-    width: 250px;
+    width:50px;
     margin-left: auto;
     margin-right: auto;
 }
+
 #container {
-    width: 250px;
-    margin: 80px auto;
+    position: absolute;
+    left: 180px;
+    top: 220px;
 }
+
+#header {
+    position: fixed;
+    top: 0px;
+    left:; 0px;
+    width: 105px;
+    height: 100%;
+    border-right: 1px solid #eee;
+    background-color: #fff;
+    z-index: 999;
+    padding: 20px;
+}
+
+#header img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #ddd;
+}
+
+#header ul {
+    list-style: none;
+    padding: 0;
+    padding-top: 20px;
+    font-size: 12px;
+}
+
+#header ul li {
+    padding-bottom: 10px;
+}
+
+#header h1 {
+    //position: absolute;
+    left: 70px;
+    bottom: 2px;
+    font-size: 15px;
+}
+
+#chart {
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    position: fixed;
+    padding-top: 20px;
+    top: 0px;
+    left: 180px;
+}
+
+#chart h1{
+    font-weight: 400;
+}
+
+a {
+    color: #333;
+    text-decoration: none;
+}
+
+#header a:hover {
+    color: #000;
+    font-weight: bold;
+}
+
+
+rect {
+    shape-render: crispEdges;
+}
+
+.quartet-line {
+    stroke: #D0D0D0;
+    stroke-width: 1.0;
+}
+
+.quartet-line-played {
+    stroke: #FF7878;
+    stroke-width: 1.0;
+}
+
+.handle {
+    stroke-width: 1.0;
+    stroke: none;
+    fill: #fff;
+    opacity: 0;
+}
+
+.d3-tip {
+    line-height: 1;
+    font-size: 12px;
+    padding: 5px;
+    background: #333;
+    color: #fff;
+    border-radius: 2px;
+}
+
+/* Creates a small triangle extender for the tooltip */
+.d3-tip:after {
+    box-sizing: border-box;
+    display: inline;
+    font-size: 12px;
+    width: 100%;
+    line-height: 1;
+    color: #333;
+    content: "\25BC";
+    position: absolute;
+    text-align: center;
+}
+
+/* Style northward tooltips differently */
+.d3-tip.n:after {
+    margin: -2px 0 0 0;
+    top: 100%;
+    left: 0;
+}
+
+
+.event {
+    position: relative;
+    border-bottom: 1px solid #eee;
+    width: 550px;
+    padding: 20px;
+    padding-left: 0px;
+    padding-bottom: 50px;
+    overflow: hidden;
+}
+
+.event .sidebar {
+    float: left;
+    width: 120px;
+}
+
+.event-content {
+    float: right;
+    width: 400px;
+}
+
+.event-date {
+    font-size: 24px;
+    font-weight: 400;
+    color: #333;
+    text-transform:uppercase;
+}
+
+.image {
+    position: relative;
+    width: 400px;
+    height: 300px;
+}
+
+.image img {
+    width: 400px;
+    height: 300px;
+}
+
+.tint {
+    position: absolute;
+    top: 0px;
+    background-color: #000;
+    opacity: 0.4;
+    width: 100%;
+    bottom: 0px;
+}
+
+.photo-caption {
+    position: absolute;
+    top: 60px;
+    width: 100%;
+    text-align: center;
+    color: #eee;
+}
+.event-title {
+    font-size: 24px;
+    font-weight: 400;
+}
+.event-quartets {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+}
+.event-people {
+    font-size: 12px;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.5;
+}
+
+.event-people > ul {
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+}
+.event-people > ul li {
+    float: left;
+    padding-bottom: 10px;
+    padding-right: 8px;
+}
+
+.event-description {
+    font-size: 14px;
+    line-height:20px;
+}
+
+.darkened {
+    zoom: 1;
+    filter: alpha(opacity=50);
+    opacity: 0.5;
+}
+
 </style>
-<div id="container">
-<img id="haydn" src="./assets/haydn_portrait.jpg">
-<p>coming soon</p>
+<div id="header">
+        <img src=""></img>
+        <h1>THE HAYDN ENTHUSIASTS</h1>
+        <ul>
+                <li><a href="#">CONCERTS</a></li>
+                <li><a href="#">DATA</a></li>
+                <li><a href="#">PEOPLE</a></li>
+        </ul>
 </div>
+<div id="container">
+</div>
+<div id="chart">
+    <h1>CONCERTS</h1>
+</div>
+</div>
+
+
+<script src="./js/underscore-min.js"></script>
+<script src="./js/jquery-1.11.1.min.js"></script>
+<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+
+
+<script type="text/template" id="event-template">
+
+<div class="sidebar">
+    <span class="event-date"><%= eventDateFormatter(date) %></span>
+</div>
+
+<div class="event-content">
+    <div class="image">
+        <img src="<%= photo %>"></img>
+        <div class="tint"></div>
+        <div class="photo-caption">
+            <h2 class="event-title"><%= title %></h2>
+            <h2 class="event-quartets">
+            <% _.each(quartets, function(q){ %>
+                <%= quartetName(q) %><br>
+            <% }); %>
+            </h2>
+        </div>
+    </div>
+    <p class="event-description"><%= description %></p>
+    <div class="event-people">
+        Featuring:
+        <ul>
+            <% _.each(people, function(p){ %>
+                <li><%= p %></li>
+            <% }); %>
+        </ul>
+    </div>
+</div>
+
+</script>
+
+
+<script>
+
+
+function renderChart(site_data) {
+
+    // helpers
+    function translate(x, y) {
+            return 'translate(' + x + ',' + y + ')';
+    }
+
+    function values(d) {
+        var values = []
+        for (var key in d) {
+            values.push(d[key]);
+        }
+        return values;
+    }
+
+    function diff(arr) {
+        if (arr.length <=1) {
+            return arr;
+        }
+        diff_array = [];
+        for (var i = 1; i < arr.length; i++) {
+            diff_array.push(arr[i] - arr[i-1]);
+        }
+        return diff_array;
+    }
+
+    function accum(arr) {
+        var accum_arr = [0];
+        for (var i = 0; i < arr.length; i++) {
+            accum_arr.push(arr[i] + accum_arr[i]);
+        }
+        return accum_arr;
+    }
+
+    var quartets = site_data.quartets;
+
+    // annotate the ones we've played
+    site_data.events.forEach(function(d) {
+        d.quartets.forEach(function(q) {
+            quartets[q].played = true;
+        });
+    });
+
+    var quartet_list = Object.keys(quartets).sort().map(function(key){
+            quartets[key].id = key;
+            return quartets[key];
+    });
+
+    nested_quartets = d3.nest()
+                                            .key(function(d) {return d.opus; })
+                                            .entries(quartet_list);
+
+    var opus_lengths = nested_quartets.map(function(d) {return d.values.length;});
+
+    var offsets = accum(opus_lengths);
+
+    var years = values(site_data.opus_completion_year).sort();
+    var date_spacings = accum(diff(years));
+
+    /* parameters */
+
+    var yr_spacing = 10; // pixels per year in this space
+
+    var width = 900;
+    var height = 100;
+
+    var opusSpacing = 20;
+    var lineSpacing = 5;
+    var lineHeight = 30;
+    var minSpacing = 4;
+
+    /*  --- */
+
+
+    var extent = d3.extent(quartet_list, function(d) {return d.measures;});
+    var scale = d3.scale.linear()
+                                .domain(extent)
+                                .range([0.3 * lineHeight, lineHeight]);
+
+    var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(quartetName);
+
+
+    var svg = d3.select('#chart').append('svg')
+                                                    .attr('width', width)
+                                                    .attr('height', height)
+                                                    .append('g')
+                                                    .attr('transform', translate(0, 20));
+
+    svg.call(tip);
+
+    // render just the outside boxes first with labels
+    var opus_boxes = svg.selectAll("g")
+            .data(nested_quartets)
+            .enter().append('g')
+            .attr('transform', function(d, i) {
+                    return translate(offsets[i] * lineSpacing + 0.5 + (date_spacings[i] * yr_spacing) + (i * minSpacing), 0);
+            });
+
+    opus_boxes.append('text')
+            .text(function(d) {
+                    return d.key;
+            })
+            .attr('font-size', 10)
+            .attr("x", 0)
+            .attr("y", lineHeight + 10);
+
+    var quartet_box = opus_boxes.selectAll('line')
+            .data(function(d) {return d.values; })
+            .enter().append('line')
+            .attr("class", function(d, i) {
+                if (d.played) {
+                    return "quartet-line-played";
+                } else {
+                    return "quartet-line";
+                }
+            })
+            .attr("y1", function(d) {
+                return (lineHeight - scale(d.measures));
+            })
+            .attr("y2", function(d) {
+                return lineHeight;
+            })
+            .attr("x1", function(d, i) {
+                return i * lineSpacing;
+            })
+            .attr("x2", function(d, i) {
+                return i * lineSpacing;
+            });
+
+    // handles so mouse hovering is easier
+    opus_boxes.selectAll('rect')
+        .data(function(d) {return d.values; })
+        .enter().append('rect')
+        .attr("class", "handle")
+        .attr("height", function(d) {
+            return scale(d.measures);
+        })
+        .attr("width", lineSpacing)
+        .attr("x", function(d, i) {
+            return i * lineSpacing - (lineSpacing / 2.0);
+        })
+        .attr("y", function(d) {
+            return lineHeight - scale(d.measures);
+        })
+        .on("mouseover", tip.show)
+        .on('mouseout', tip.hide);
+}
+
+function quartetName(d) {
+    var name = "Op. " + d.opus;
+    if (d['#']) {
+        name += " No. " + d['#'];
+    }
+    if (d['nickname'][0]) {
+        name += " '" + d['nickname'][0] + "'";
+    }
+    return name;
+}
+
+var eventDateFormatter = d3.time.format('%b %-d');
+
+d3.json('./data.json', function(data) {
+    renderChart(data);
+
+    var events = data.events;
+
+    // pre-process
+    events.forEach(function(event) {
+        event.quartets = event.quartets.map(function(quartet) {
+            return data.quartets[quartet];
+        });
+        event.date = new Date(event.date);
+    });
+
+    // latest first
+    events = _.sortBy(events, function(e) {return -e.date;});
+
+    events.forEach(function(event, idx) {
+        var compiled = _.template($('#event-template').html());
+        var el = $('<div id="event-' + idx + '" class="event">');
+        el.html(compiled(event));
+        $('#container').append(el);
+    });
+});
+
+</script>
+
 </body>
 </html>
