@@ -2,6 +2,7 @@
 <html>
 <head>
     <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <title>Haydn Enthusiasts</title>
 </head
 <body>
 
@@ -233,7 +234,7 @@ rect {
 
 </style>
 <div id="header">
-        <img src="http://"></img>
+        <img src="./assets/haydn_sq_50.png"></img>
         <h1>THE HAYDN ENTHUSIASTS</h1>
         <ul>
             <li><a href="#">CONCERTS</a></li>
@@ -248,9 +249,10 @@ rect {
 </div>
 
 
-<script src="./js/underscore-min.js"></script>
-<script src="./js/jquery-1.11.1.min.js"></script>
-<script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.6/d3.min.js" charset="utf-8"></script>
 <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 
 
@@ -262,7 +264,7 @@ rect {
 
 <div class="event-content">
     <div class="image">
-        <img src="<%= photo %>"></img>
+        <img src="<%= eventPhoto(photo) %>"></img>
         <div class="tint"></div>
         <div class="photo-caption">
             <h2 class="event-title"><%= title %></h2>
@@ -439,6 +441,11 @@ function renderChart(site_data) {
         })
         .on("mouseover", tip.show)
         .on('mouseout', tip.hide);
+}
+
+function eventPhoto(d){
+    var name = d.split("/").pop();
+    return "./assets/event_photos/" + name;
 }
 
 function quartetName(d) {
