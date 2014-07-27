@@ -202,7 +202,7 @@ rect {
 
 <div class="event-content">
     <div class="image">
-        <img src="<%= eventPhoto(photo) %>"></img>
+        <img src="<%= photo %>"></img>
         <div class="tint"></div>
         <div class="photo-caption">
             <h2 class="event-title"><%= title %></h2>
@@ -309,10 +309,10 @@ function renderChart(site_data) {
                                 .domain(extent)
                                 .range([0.3 * lineHeight, lineHeight]);
 
-    // var tip = d3.tip()
-    //     .attr('class', 'd3-tip')
-    //     .offset([-10, 0])
-    //     .html(quartetName);
+    var tip = d3.tip()
+        .attr('class', 'd3-tip')
+        .offset([-10, 0])
+        .html(quartetName);
 
 
     var svg = d3.select('#chart').append('svg')
@@ -321,7 +321,7 @@ function renderChart(site_data) {
                                                     .append('g')
                                                     .attr('transform', translate(0, 20));
 
-    // svg.call(tip);
+    svg.call(tip);
 
     // render just the outside boxes first with labels
     var opus_boxes = svg.selectAll("g")
@@ -376,14 +376,9 @@ function renderChart(site_data) {
         })
         .attr("y", function(d) {
             return lineHeight - scale(d.measures);
-        });
-        // .on("mouseover", tip.show)
-        // .on('mouseout', tip.hide);
-}
-
-function eventPhoto(d){
-    var name = d.split("/").pop();
-    return "./assets/event_photos/" + name;
+        })
+        .on("mouseover", tip.show)
+        .on('mouseout', tip.hide);
 }
 
 function quartetName(d) {
