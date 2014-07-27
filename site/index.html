@@ -1,64 +1,18 @@
 <!doctype html>
 <html>
 <head>
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
     <title>Haydn Enthusiasts</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
 </head
 <body>
 
 <style>
-body {
-    font-family: 'Lato', sans-serif;
-    font-weight: 300;
-    color: #333;
-}
 
-#haydn {
-    width:50px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-#container {
+#event-content {
     position: absolute;
-    left: 180px;
+    left: 35px;
     top: 220px;
-}
-
-#header {
-    position: fixed;
-    top: 0px;
-    left:; 0px;
-    width: 105px;
-    height: 100%;
-    border-right: 1px solid #eee;
-    background-color: #fff;
-    z-index: 999;
-    padding: 20px;
-}
-
-#header img {
-    width: 50px;
-    height: 50px;
-    border: 1px solid #ddd;
-}
-
-#header ul {
-    list-style: none;
-    padding: 0;
-    padding-top: 20px;
-    font-size: 12px;
-}
-
-#header ul li {
-    padding-bottom: 10px;
-}
-
-#header h1 {
-    //position: absolute;
-    left: 70px;
-    bottom: 2px;
-    font-size: 15px;
 }
 
 #chart {
@@ -73,17 +27,6 @@ body {
 #chart h1{
     font-weight: 400;
 }
-
-a {
-    color: #333;
-    text-decoration: none;
-}
-
-#header a:hover {
-    color: #000;
-    font-weight: bold;
-}
-
 
 rect {
     shape-render: crispEdges;
@@ -135,7 +78,6 @@ rect {
     left: 0;
 }
 
-
 .event {
     position: relative;
     border-bottom: 1px solid #eee;
@@ -145,35 +87,29 @@ rect {
     padding-bottom: 50px;
     overflow: hidden;
 }
-
 .event .sidebar {
     float: left;
     width: 120px;
 }
-
 .event-content {
     float: right;
     width: 400px;
 }
-
 .event-date {
     font-size: 24px;
     font-weight: 400;
     color: #333;
     text-transform:uppercase;
 }
-
 .image {
     position: relative;
     width: 400px;
     height: 300px;
 }
-
 .image img {
     width: 400px;
     height: 300px;
 }
-
 .tint {
     position: absolute;
     top: 0px;
@@ -182,7 +118,6 @@ rect {
     width: 100%;
     bottom: 0px;
 }
-
 .photo-caption {
     position: absolute;
     top: 60px;
@@ -237,24 +172,25 @@ rect {
         <img src="./assets/haydn_sq_50.png"></img>
         <h1>THE HAYDN ENTHUSIASTS</h1>
         <ul>
-            <li><a href="#">CONCERTS</a></li>
-            <li><a href="#">PEOPLE</a></li>
+            <li><a href="/about.html">ABOUT</a></li>
+            <li><a class="active" href="/">CONCERTS</a></li>
+            <li><a href="/enthusiasts.html">ENTHUSIASTS</a></li>
             <li><a href="http://fb.me/haydnenthusiasts">FACEBOOK</a></li>
             <li><a href="https://twitter.com/haydnenthusiast">TWITTER</a></li>
         </ul>
 </div>
 <div id="container">
-</div>
+<div id="event-content"></div>
 <div id="chart">
     <h1>CONCERTS</h1>
 </div>
 </div>
 
 
-<script src="//cdnjs.cloudflare.com/ajax/libs/underscore.js/1.6.0/underscore-min.js"></script>
+<script src="./js/underscore-min.js"></script>
 <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.4.6/d3.min.js" charset="utf-8"></script>
+<script src="./js/jquery-1.11.1.min.js"></script>
+<script src="./js/d3.v3.min.js"></script>
 <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
 
 
@@ -373,10 +309,10 @@ function renderChart(site_data) {
                                 .domain(extent)
                                 .range([0.3 * lineHeight, lineHeight]);
 
-    var tip = d3.tip()
-        .attr('class', 'd3-tip')
-        .offset([-10, 0])
-        .html(quartetName);
+    // var tip = d3.tip()
+    //     .attr('class', 'd3-tip')
+    //     .offset([-10, 0])
+    //     .html(quartetName);
 
 
     var svg = d3.select('#chart').append('svg')
@@ -385,7 +321,7 @@ function renderChart(site_data) {
                                                     .append('g')
                                                     .attr('transform', translate(0, 20));
 
-    svg.call(tip);
+    // svg.call(tip);
 
     // render just the outside boxes first with labels
     var opus_boxes = svg.selectAll("g")
@@ -440,9 +376,9 @@ function renderChart(site_data) {
         })
         .attr("y", function(d) {
             return lineHeight - scale(d.measures);
-        })
-        .on("mouseover", tip.show)
-        .on('mouseout', tip.hide);
+        });
+        // .on("mouseover", tip.show)
+        // .on('mouseout', tip.hide);
 }
 
 function eventPhoto(d){
@@ -483,7 +419,7 @@ d3.json('./data.json', function(data) {
         var compiled = _.template($('#event-template').html());
         var el = $('<div id="event-' + idx + '" class="event">');
         el.html(compiled(event));
-        $('#container').append(el);
+        $('#event-content').append(el);
     });
 });
 
