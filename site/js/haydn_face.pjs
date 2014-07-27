@@ -1,6 +1,7 @@
 int original_width = 524;
 int original_height = 640;
 float multiplier = .1;
+boolean freeze = false;
 float growth = 1.06;
 color bg = color(255, 255, 255);
 color newbg = color(255, 255, 255);
@@ -21,6 +22,13 @@ void draw()
     if (canvas.offsetWidth != width || canvas.offsetHeight != height)
         size(canvas.offsetWidth, canvas.offsetHeight);
   
+    if (multiplier > 1)
+    {
+        multiplier = 1;
+        console.log(freeze);
+        freeze = true;
+        noLoop();
+    }
     background(bg);
     pushMatrix();
     float aspect = original_width / original_height;
@@ -38,17 +46,12 @@ void draw()
         // draw
         fill(c[0], c[1], c[2], 200);
         noStroke();
-        float jitterx = (1 - multiplier) * random(5) + random(mouseX - pmouseX);
-        float jittery = (1 - multiplier) * random(5) + random(mouseY - pmouseY);
+        float jitterx = (1 - multiplier) * random(5) + (freeze ? 0 : random(mouseX - pmouseX));
+        float jittery = (1 - multiplier) * random(5) + (freeze ? 0 : random(mouseY - pmouseY));
         ellipse(bounds[0] + jitterx, bounds[1] + jittery, multiplier*(bounds[2] - bounds[0]), multiplier*(bounds[3] - bounds[1]));
     }
     popMatrix();
     
     multiplier *= growth;
-    if (multiplier > 1)
-    {
-        multiplier = 1;
-        noLoop();
-    }
 }
 
