@@ -1,0 +1,54 @@
+int original_width = 524;
+int original_height = 640;
+float multiplier = .1;
+float growth = 1.06;
+color bg = color(255, 255, 255);
+color newbg = color(255, 255, 255);
+
+void setup() 
+{
+    canvas = document.getElementById("full")
+    console.log(canvas.offsetWidth, canvas.offsetHeight);
+    size(canvas.offsetWidth, canvas.offsetHeight);
+
+    window.onresize = function() { redraw(); }
+     
+    frameRate(30);
+}
+
+void draw() 
+{
+    if (canvas.offsetWidth != width || canvas.offsetHeight != height)
+        size(canvas.offsetWidth, canvas.offsetHeight);
+  
+    background(bg);
+    pushMatrix();
+    float aspect = original_width / original_height;
+    float desired_width = aspect * height;
+    translate(.5*(width - desired_width), 0);
+    scale(height / original_height);
+    int bgindex = int(random(face_data.length));
+    for (int i = 0; i < multiplier*face_data.length; i++)
+    {
+        // cheat
+        var row = face_data[i];
+        var bounds = row[0];
+        var c = row[1];
+
+        // draw
+        fill(c[0], c[1], c[2], 200);
+        noStroke();
+        float jitterx = (1 - multiplier) * random(5) + random(mouseX - pmouseX);
+        float jittery = (1 - multiplier) * random(5) + random(mouseY - pmouseY);
+        ellipse(bounds[0] + jitterx, bounds[1] + jittery, multiplier*(bounds[2] - bounds[0]), multiplier*(bounds[3] - bounds[1]));
+    }
+    popMatrix();
+    
+    multiplier *= growth;
+    if (multiplier > 1)
+    {
+        multiplier = 1;
+        noLoop();
+    }
+}
+

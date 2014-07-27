@@ -59,6 +59,7 @@ body {
     left: 146px;
     top: 0px;
     margin: 10px 40px;
+    max-width: 946px;
 }
 
 #title {
@@ -67,7 +68,7 @@ body {
     padding-top: 20px;
     top: 0px;
     left: 180px;
-    width: 800px;
+    width: 100%;
 }
 
 #title h1{
@@ -82,7 +83,15 @@ h3 {
     font-size: 18px;
     font-weight: 300;
 }
-a {
+#header a {
     color: #333;
     text-decoration: none;
+}
+
+a {
+    color: rgb(29, 145, 192);
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
 }

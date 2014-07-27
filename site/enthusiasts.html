@@ -47,7 +47,7 @@ h3 {
 </style>
 
 <div id="header">
-        <img src="./assets/haydn_sq_50.png"></img>
+        <a href="/about.html"><img src="/assets/haydn_sq_50.png"></img></a>
         <h1>THE HAYDN ENTHUSIASTS</h1>
         <ul>
             <li><a href="/about.html">ABOUT</a></li>
@@ -66,9 +66,9 @@ h3 {
 </div>
 </div>
 
-<script src="./js/underscore-min.js"></script>
-<script src="./js/jquery-1.11.1.min.js"></script>
-<script src="./js/d3.v3.min.js"></script>
+<script src="/js/underscore-min.js"></script>
+<script src="/js/jquery-1.11.1.min.js"></script>
+<script src="/js/d3.v3.min.js"></script>
 
 <script type="text/template" id="person-template">
 <div class="person-left">
@@ -84,7 +84,7 @@ h3 {
 <script>
 
 function personPhoto(photo){
-    return "./assets/people/" + photo;
+    return "/assets/people/" + photo;
 }
 
 d3.json('./data.json', function(data) {
