@@ -1,16 +1,16 @@
 int original_width = 524;
 int original_height = 640;
 float multiplier = .1;
-boolean freeze = false;
 float growth = 1.06;
 color bg = color(255, 255, 255);
-color newbg = color(255, 255, 255);
+boolean nice = false;
 
 void setup() 
 {
     canvas = document.getElementById("full")
     console.log(canvas.offsetWidth, canvas.offsetHeight);
     size(canvas.offsetWidth, canvas.offsetHeight);
+    ellipseMode(CENTER);
 
     window.onresize = function() { redraw(); }
      
@@ -23,35 +23,58 @@ void draw()
         size(canvas.offsetWidth, canvas.offsetHeight);
   
     if (multiplier > 1)
-    {
         multiplier = 1;
-        console.log(freeze);
-        freeze = true;
-        noLoop();
-    }
+
     background(bg);
-    pushMatrix();
     float aspect = original_width / original_height;
     float desired_width = aspect * height;
-    translate(.5*(width - desired_width), 0);
-    scale(height / original_height);
-    int bgindex = int(random(face_data.length));
+    PVector trans = new PVector(.5*(width - desired_width), 0);
+    float scal = height / original_height;
+
     for (int i = 0; i < multiplier*face_data.length; i++)
     {
-        // cheat
+        // modulus seems broken, use this instead
+        //if (i - 10*floor(i / 10) < 3) continue;
+        
+        // cheat by using js types in processing
         var row = face_data[i];
         var bounds = row[0];
         var c = row[1];
+        float rx = scal * (bounds[2] - bounds[0]);
+        float ry = scal * (bounds[3] - bounds[1]);
+        PVector pos = new PVector(bounds[0], bounds[1]);
+        pos.mult(scal);
+        pos.add(trans);
+
+
+        // Calculate force between mouse and center of ellipse.
+        PVector F = new PVector(0, 0);
+        if (!nice) {
+            PVector mouse = new PVector(mouseX, mouseY);
+            PVector r21 = PVector.sub(pos, mouse);
+            float d = pow(r21.mag(), 2);
+            F = PVector.mult(PVector.div(r21, d), 100*rx);
+        }
+
+        // startup noise for excitement
+        float jitterx = (1 - multiplier) * random(5);
+        float jittery = (1 - multiplier) * random(5);
 
         // draw
         fill(c[0], c[1], c[2], 200);
         noStroke();
-        float jitterx = (1 - multiplier) * random(5) + (freeze ? 0 : random(mouseX - pmouseX));
-        float jittery = (1 - multiplier) * random(5) + (freeze ? 0 : random(mouseY - pmouseY));
-        ellipse(bounds[0] + jitterx, bounds[1] + jittery, multiplier*(bounds[2] - bounds[0]), multiplier*(bounds[3] - bounds[1]));
+        ellipse(pos.x + F.x + jitterx, pos.y + F.y + jittery, multiplier * rx, multiplier * ry);
     }
-    popMatrix();
     
     multiplier *= growth;
+    nice = false;  // being nice twice in a row is overkill.
 }
 
+void mouseOver(){
+    loop();
+}
+void mouseOut(){
+    noLoop();
+    nice = true;
+    redraw();
+}
