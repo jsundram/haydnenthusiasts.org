@@ -38,13 +38,18 @@ rect {
     shape-render: crispEdges;
 }
 
-.quartet-line {
+.quartet-line-unscheduled {
     stroke: #D0D0D0;
     stroke-width: 1.0;
 }
 
 .quartet-line-played {
     stroke: #FF7878;
+    stroke-width: 1.0;
+}
+
+.quartet-line-upcoming {
+    stroke: #92c5de;
     stroke-width: 1.0;
 }
 
@@ -273,15 +278,18 @@ function renderChart(site_data) {
     var quartets = site_data.quartets;
 
     // annotate the ones we've played
-    site_data.events.forEach(function(d) {
-        d.quartets.forEach(function(q) {
-            quartets[q].played = true;
+    var now = new Date();
+    var next = site_data.events.filter(function(e){ return e.date > now;}).pop();
+    site_data.events.forEach(function(e) {
+        marker = e.date <= now ? 1 : e === next ? 2 : 0;
+        e.quartets.forEach(function(q) {
+            quartets[q.id].played = marker;
         });
     });
 
     var quartet_list = Object.keys(quartets).sort().map(function(key){
-            quartets[key].id = key;
-            return quartets[key];
+        quartets[key].id = key;
+        return quartets[key];
     });
 
     nested_quartets = d3.nest()
@@ -349,11 +357,12 @@ function renderChart(site_data) {
             .data(function(d) {return d.values; })
             .enter().append('line')
             .attr("class", function(d, i) {
-                if (d.played) {
+                if (d.played == 1) {
                     return "quartet-line-played";
-                } else {
-                    return "quartet-line";
+                } else if (d.played == 2){
+                    return "quartet-line-upcoming";
                 }
+                return "quartet-line-unscheduled";
             })
             .attr("y1", function(d) {
                 return (lineHeight - scale(d.measures));
@@ -408,13 +417,12 @@ function eventPhoto(photo){
 }
 
 d3.json('./data.json', function(data) {
-    renderChart(data);
-
     var events = data.events;
 
     // pre-process
     events.forEach(function(event) {
         event.quartets = event.quartets.map(function(quartet) {
+            data.quartets[quartet].id = quartet;
             return data.quartets[quartet];
         });
         event.date = new Date(event.date);
@@ -423,13 +431,16 @@ d3.json('./data.json', function(data) {
 
     // latest first
     events = _.sortBy(events, function(e) {return -e.date;});
+    data.events = events;
+
+    // ok, now that we've done some preprocessing, render.
+    renderChart(data);
 
     // don't show more than one event that hasn't occured yet
     // just the next one.
     var now = new Date();
-    var future = events.filter(function(e){return e.date > now;});
-    if (future.length > 1) {
-        next = future[future.length - 1];
+    var next = events.filter(function(e){return e.date > now;}).pop();
+    if (next) {
         var past = events.filter(function(e){return e.date <= now;});
         events = [next].concat(past);
     }
