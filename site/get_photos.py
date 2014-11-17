@@ -2,6 +2,8 @@
 import json
 import requests
 import os
+from PIL import Image
+
 
 directory = './assets/event_photos/'
 with open('data.json') as f:
@@ -17,4 +19,8 @@ for event in data['events']:
         r = requests.get(photo_url)
         with open(to_write, 'wb') as f:
             f.write(r.content)
+
+        im = Image.open(to_write)
+        if im.size != (400, 300):
+            print("%s (date: %s) needs resizing: (%s)" % (name, event['date'], im.size))
 
