@@ -400,6 +400,13 @@ function quartetName(d) {
 
 var eventDateFormatter = d3.time.format('%b %-d');
 
+function eventPhoto(photo){
+    // rewrite links to fb photos to local links in case of fbcdn changes.
+    var q = photo.lastIndexOf('?')
+    var photo_name = photo.slice(photo.lastIndexOf('/')+1, q === -1 ? photo.length : q)
+    return "/assets/event_photos/" + photo_name;
+}
+
 d3.json('./data.json', function(data) {
     renderChart(data);
 
@@ -411,10 +418,22 @@ d3.json('./data.json', function(data) {
             return data.quartets[quartet];
         });
         event.date = new Date(event.date);
+        event.photo = eventPhoto(event.photo);
     });
 
     // latest first
     events = _.sortBy(events, function(e) {return -e.date;});
+
+    // don't show more than one event that hasn't occured yet
+    // just the next one.
+    var now = new Date();
+    var future = events.filter(function(e){return e.date > now;});
+    if (future.length > 1) {
+        next = future[future.length - 1];
+        var past = events.filter(function(e){return e.date <= now;});
+        events = [next].concat(past);
+    }
+
 
     events.forEach(function(event, idx) {
         var compiled = _.template($('#event-template').html());
