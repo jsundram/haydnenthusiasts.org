@@ -811,12 +811,21 @@
             "blurb": "A native of Sonoma, California, Nigel Armstrong has recently been brought to international attention by winning awards in several prestigious violin competitions. These include the Buenos Aires International Violin Competition in Argentina, the Yehudi Menuhin Young Violinists International Competition in Norway, and the International Tchaikovsky Competition in Russia.",
             "instrument": "Violin",
             "photo": "Nigel Armstrong.jpg"
-
         },
         "Jessica Chang": {
             "blurb": "Jessica Chang is passionate about building communities through technology and music for all. As a violist, she studied at the Curtis Institute of Music and The Juilliard School, and founded Chamber Music by the Bay, a series that brings interactive concerts to youth and communities throughout the SF Bay Area.  Jessica has worked toward improved youth access to arts education through the School District of Philadelphia’s ArtsRising initiative, and as a Yale undergrad (04-08), taught for K-12 enrichment programs in New Haven, CT; Palo Alto, CA; San Jose, CA, and San Francisco. After a decade of surviving solid East Coast winters, Jessica recently relocated to the Bay Area to join the engineering, product, and design recruiting team at Dropbox.",
             "instrument": "Viola",
             "photo": "Jessica Chang.jpg"
+        },
+        "Shay Rudolph": {
+            "blurb": "Shay Rudolph is the assistant principal cellist of the New Bedford Symphony, principal cellist of the New Hampshire Philharmonic, and a Red Chair Society member of the Orchestra of Indian Hill. Past performance highlights include the North American tour of Star Wars: In Concert; playing electric cello with her rock band; and studying film music at the Henry Mancini Institute.  Shay earned a BM & MM from Boston University, where she studied cello with Michael Reynolds, Leslie Parnas and George Neikrug.  She maintains a private teaching studio in North Chelmsford, MA and serves on the faculty of Clark University.",
+            "instrument": "Cello",
+            "photo": "Shay Rudolph.jpg"
+        },
+        "Isaac Krauss": {
+            "blurb": "Isaac is Associate Professor of Chemistry at <a href=\"http://people.brandeis.edu/~kraussi/\">Brandeis University</a>, where he does research on HIV vaccines and unnatural DNA. A native of Fairbanks, Alaska, Isaac grew to love the violin as it was an attractive indoor activity for keeping warm during snow storms. Although Isaac was once vigorously opposed to playing any Haydn string quartets, in 2007 he \"saw the light\" and since then has played Haydn with insatiable avidity.",
+            "instrument": "Violin",
+            "photo": "Isaac Krauss.jpg"
         }
     }
 }
