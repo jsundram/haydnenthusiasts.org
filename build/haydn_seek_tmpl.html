@@ -1,0 +1,213 @@
+<!doctype html>
+<html>
+<head>
+    <meta property="og:title" content="About The Haydn Enthusiasts"/>
+    <meta property="og:site_name" content="The Haydn Enthusiasts"/>
+    <meta property="og:url" content="http://www.haydnenthusiasts.org/about.html"/>
+    <meta property="og:description" content="The Haydn Enthusiasts were founded in May 2013 by Andrew Wong, Elaine Leisinger, Jason Sundram, and Lewis Patzner. We were brought together by a shared enjoyment of Haydn's String Quartets, and formed The Enthusiasts out of a desire to explore all 67.5 of them, and share our journey and enthusiasm with as many people as we can along the way."/>
+    <meta property="og:image" content="http://www.haydnenthusiasts.org//assets/haydn_sq_full.png"/>
+
+    <title>Haydn Enthusiasts</title>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+</head
+<body>
+
+<style>
+
+#container {
+    text-align: center;
+    min-width: 800px;
+}
+.special h1 {
+    text-transform: uppercase;
+    font-size: 15px;
+}
+.section {
+    /*border: 1px solid blue;*/
+    text-align: center;
+    width: 100%;
+    padding-bottom: 36px;
+}
+.section h1.header {
+    width: 100%;
+    border-bottom: 1px solid #DDD;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 30px;
+}
+.map {
+    width: 400px;
+    /*height: 290px;*/
+}
+.col {
+    /*border: 1px solid red;*/
+    width: 400px;
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
+}
+.event-date {
+    text-align: left;
+    margin-left: 20px;
+    font-size: 24px;
+}
+.event-people {
+    font-size: 12px;
+    font-weight: 300;
+    color: #000;
+    opacity: 0.8;
+}
+.event-people > ul {
+    list-style: none;
+    padding: 0;
+    font-size: 12px;
+    margin-top: 0;
+}
+.event-people > ul li {
+    float: left;
+    padding-bottom: 10px;
+    padding-right: 8px;
+    padding-top: 5px;
+}
+.event-works {
+    list-style: none;
+    padding: 0;
+}
+.event-body {
+    margin-left: 32px;
+}
+.event {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+.program {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.tod {
+    margin-left: 20px;
+    font-size: 20px;
+    /*color: #147BFF;*/
+    color: #555;
+}
+
+.dot {
+    width: 22px;
+    height: 23px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: -4px;
+}
+.dot.blue {
+    background: url('/assets/dot_blue.png') no-repeat;
+}
+.dot.green {
+    background: url('/assets/dot_green.png') no-repeat;
+}
+.dot.red {
+    background: url('/assets/dot_red.png') no-repeat;
+}
+.location {
+    display: inline-block;
+}
+.banner {
+    background: url('/assets/haydn_banner.png') no-repeat;
+    width: 736px;
+    height: 243px;
+    margin: auto;
+    padding-top: 37px;
+    font-size: 24px;
+    line-height: 1.3;
+}
+h3 {
+        margin: 5px;
+}
+</style>
+
+<div id="header">
+    <a href="/about.html"><img src="/assets/haydn_sq_50.png"></img></a>
+    <h1>THE HAYDN ENTHUSIASTS</h1>
+    <ul>
+        <li><a class="active" href="/about.html">ABOUT</a></li>
+        <li><a href="/">CONCERTS</a></li>
+        <li><a href="/enthusiasts.html">ENTHUSIASTS</a></li>
+        <li><a href="http://fb.me/haydnenthusiasts">FACEBOOK</a></li>
+        <li><a href="https://twitter.com/haydnenthusiast">TWITTER</a></li>
+    </ul>
+</div>
+<div id="container">
+
+<div class="special">
+    <h1>SPECIAL EVENT</h1>
+</div>
+
+<div class="banner">
+    <h1>
+    Haydn Seek<br>
+    All 68 quartets in 2 days
+    </h1>
+</div>
+
+<div class="section">
+    <h1 class="header">Details</h1>
+
+        <div class="col">
+            <h2>Brandeis University</h2>
+            <h3>Saturday, Oct 10</h3>
+            <h3>Monday, Oct 12</h3>
+            <br>
+            <h3>Shapiro Campus Center Atrium</h3>
+            <h3>Shapiro Science Center Atrium</h3>
+            <h3>The Moffet Building</h3>
+        </div>
+
+        <div class="col">
+            <a href="http://www.brandeis.edu/about/visiting/map.html"><img class="map" src="/assets/brandeis_map.png"></a>
+        </div>
+
+</div>
+
+<div class="section">
+    <h1 class="header">Full Schedule</h1>
+
+    {% for event in events %}
+
+    <div class="event">
+        <div class="event-date">
+            {{ event.date }} <span class="tod"> {{ event.time }}</span>
+        </div>
+        {% for session in event.sessions %}
+        <div class="col program">
+            <div class="event-location">
+                <div class="{{ session.location_class }}"></div><div class="location">{{ session.location }}</div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    {% for work in session.works %}
+                    <li>{{ work }}</li>
+                    {% endfor %}
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        {% for person in session.performers %}
+                        <li>{{ person }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+
+    {% endfor %}
+
+</div>
+
+</body>
+</html>
+

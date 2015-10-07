@@ -1,164 +1,68 @@
 <!doctype html>
 <html>
 <head>
-    <meta property="og:title" content="Performances by The Haydn Enthusiasts"/>
+    <meta property="og:title" content="About The Haydn Enthusiasts"/>
     <meta property="og:site_name" content="The Haydn Enthusiasts"/>
-    <meta property="og:url" content="http://www.haydnenthusiasts.org/index.html"/>
-    <meta property="og:description" content="View our upcoming concerts, previous concerts, and track our progress through our complete cycle of Haydn's 67.5 String Quartets."/>
-    <meta property="og:image" content="http://www.haydnenthusiasts.org/assets/haydn_sq_full.png"/>
+    <meta property="og:url" content="http://www.haydnenthusiasts.org/about.html"/>
+    <meta property="og:description" content="The Haydn Enthusiasts were founded in May 2013 by Andrew Wong, Elaine Leisinger, Jason Sundram, and Lewis Patzner. We were brought together by a shared enjoyment of Haydn's String Quartets, and formed The Enthusiasts out of a desire to explore all 67.5 of them, and share our journey and enthusiasm with as many people as we can along the way."/>
+    <meta property="og:image" content="http://www.haydnenthusiasts.org//assets/haydn_sq_full.png"/>
 
     <title>Haydn Enthusiasts</title>
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <!-- <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'> -->
     <link rel="stylesheet" type="text/css" href="css/main.css">
 </head
 <body>
 
 <style>
 
-#event-content {
-    position: absolute;
-    left: 35px;
-    top: 220px;
-}
-
-#chart {
-    background-color: #fff;
-    border-bottom: 1px solid #eee;
-    position: fixed;
-    padding-top: 20px;
-    top: 0px;
-    left: 180px;
-}
-
-#chart h1{
-    font-weight: 400;
-}
-
-rect {
-    shape-render: crispEdges;
-}
-
-.quartet-line-unscheduled {
-    stroke: #D0D0D0;
-    stroke-width: 1.0;
-}
-
-.quartet-line-played {
-    stroke: #FF7878;
-    stroke-width: 1.0;
-}
-
-.quartet-line-upcoming {
-    stroke: #92c5de;
-    stroke-width: 1.0;
-}
-
-.handle {
-    stroke-width: 1.0;
-    stroke: none;
-    fill: #fff;
-    opacity: 0;
-}
-
-.d3-tip {
-    line-height: 1;
-    font-size: 12px;
-    padding: 5px;
-    background: #333;
-    color: #fff;
-    border-radius: 2px;
-}
-
-/* Creates a small triangle extender for the tooltip */
-.d3-tip:after {
-    box-sizing: border-box;
-    display: inline;
-    font-size: 12px;
-    width: 100%;
-    line-height: 1;
-    color: #333;
-    content: "\25BC";
-    position: absolute;
+#container {
     text-align: center;
+    min-width: 800px;
 }
-
-/* Style northward tooltips differently */
-.d3-tip.n:after {
-    margin: -2px 0 0 0;
-    top: 100%;
-    left: 0;
+.special h1 {
+    text-transform: uppercase;
+    font-size: 15px;
 }
-
-.event {
-    position: relative;
-    border-bottom: 1px solid #eee;
-    width: 550px;
-    padding: 20px;
-    padding-left: 0px;
-    padding-bottom: 50px;
-    overflow: hidden;
+.section {
+    /*border: 1px solid blue;*/
+    text-align: center;
+    width: 100%;
+    padding-bottom: 36px;
 }
-.event .sidebar {
-    float: left;
-    width: 120px;
+.section h1.header {
+    width: 100%;
+    border-bottom: 1px solid #DDD;
+    text-transform: uppercase;
+    font-size: 15px;
+    line-height: 30px;
 }
-.event-content {
-    float: right;
+.map {
     width: 400px;
+    /*height: 290px;*/
+}
+.col {
+    /*border: 1px solid red;*/
+    width: 400px;
+    vertical-align: top;
+    display: inline-block;
+    text-align: left;
 }
 .event-date {
+    text-align: left;
+    margin-left: 20px;
     font-size: 24px;
-    font-weight: 400;
-    color: #333;
-    text-transform:uppercase;
-}
-.image {
-    position: relative;
-    width: 400px;
-    height: 300px;
-}
-.image img {
-    width: 400px;
-    height: 300px;
-}
-.tint {
-    position: absolute;
-    top: 0px;
-    background-color: #000;
-    opacity: 0.4;
-    width: 100%;
-    bottom: 0px;
-}
-.photo-caption {
-    position: absolute;
-    top: 60px;
-    width: 100%;
-    text-align: center;
-    color: #eee;
-}
-.event-title {
-    font-size: 24px;
-    font-weight: 400;
-}
-.event-quartets {
-    font-size: 18px;
-    font-weight: 400;
-    line-height: 28px;
 }
 .event-people {
-    position: relative;
     font-size: 12px;
     font-weight: 300;
     color: #000;
-    opacity: 0.5;
+    opacity: 0.8;
 }
-
 .event-people > ul {
-    position: absolute;
-    top: 4px;
     list-style: none;
     padding: 0;
     font-size: 12px;
+    margin-top: 0;
 }
 .event-people > ul li {
     float: left;
@@ -166,295 +70,603 @@ rect {
     padding-right: 8px;
     padding-top: 5px;
 }
-
-.event-description {
-    font-size: 14px;
-    line-height:20px;
+.event-works {
+    list-style: none;
+    padding: 0;
+}
+.event-body {
+    margin-left: 32px;
+}
+.event {
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    padding-bottom: 30px;
+}
+.program {
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.tod {
+    margin-left: 20px;
+    font-size: 20px;
+    /*color: #147BFF;*/
+    color: #555;
 }
 
-.darkened {
-    zoom: 1;
-    filter: alpha(opacity=50);
-    opacity: 0.5;
+.dot {
+    width: 22px;
+    height: 23px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-right: 10px;
+    margin-top: -4px;
 }
-
+.dot.blue {
+    background: url('/assets/dot_blue.png') no-repeat;
+}
+.dot.green {
+    background: url('/assets/dot_green.png') no-repeat;
+}
+.dot.red {
+    background: url('/assets/dot_red.png') no-repeat;
+}
+.location {
+    display: inline-block;
+}
+.banner {
+    background: url('/assets/haydn_banner.png') no-repeat;
+    width: 736px;
+    height: 243px;
+    margin: auto;
+    padding-top: 37px;
+    font-size: 24px;
+    line-height: 1.3;
+}
+h3 {
+        margin: 5px;
+}
 </style>
+
 <div id="header">
-        <a href="/about.html"><img src="/assets/haydn_sq_50.png"></img></a>
-        <h1>THE HAYDN ENTHUSIASTS</h1>
-        <ul>
-            <li><a href="/about.html">ABOUT</a></li>
-            <li><a class="active" href="/">CONCERTS</a></li>
-            <li><a href="/enthusiasts.html">ENTHUSIASTS</a></li>
-            <li><a href="http://fb.me/haydnenthusiasts">FACEBOOK</a></li>
-            <li><a href="https://twitter.com/haydnenthusiast">TWITTER</a></li>
-        </ul>
+    <a href="/about.html"><img src="/assets/haydn_sq_50.png"></img></a>
+    <h1>THE HAYDN ENTHUSIASTS</h1>
+    <ul>
+        <li><a class="active" href="/about.html">ABOUT</a></li>
+        <li><a href="/">CONCERTS</a></li>
+        <li><a href="/enthusiasts.html">ENTHUSIASTS</a></li>
+        <li><a href="http://fb.me/haydnenthusiasts">FACEBOOK</a></li>
+        <li><a href="https://twitter.com/haydnenthusiast">TWITTER</a></li>
+    </ul>
 </div>
 <div id="container">
-<div id="event-content"></div>
-<div id="chart">
-    <h1>CONCERTS</h1>
-</div>
-</div>
 
-
-<script src="/js/underscore-min.js"></script>
-<!--<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>-->
-<script src="/js/jquery-1.11.1.min.js"></script>
-<script src="/js/d3.v3.min.js"></script>
-<script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
-
-
-<script type="text/template" id="event-template">
-
-<div class="sidebar">
-    <span class="event-date"><%= eventDateFormatter(date) %></span>
+<div class="special">
+    <h1>SPECIAL EVENT</h1>
 </div>
 
-<div class="event-content">
-    <div class="image">
-        <img src="<%= photo %>"></img>
-        <div class="tint"></div>
-        <div class="photo-caption">
-            <h2 class="event-title"><%= title %></h2>
-            <h2 class="event-quartets">
-            <% _.each(quartets, function(q){ %>
-                <%= quartetName(q) %><br>
-            <% }); %>
-            </h2>
+<div class="banner">
+    <h1>
+    Haydn Seek<br>
+    All 68 quartets in 2 days
+    </h1>
+</div>
+
+<div class="section">
+    <h1 class="header">Details</h1>
+
+        <div class="col">
+            <h2>Brandeis University</h2>
+            <h3>Saturday, Oct 10</h3>
+            <h3>Monday, Oct 12</h3>
+            <br>
+            <h3>Shapiro Campus Center Atrium</h3>
+            <h3>Shapiro Science Center Atrium</h3>
+            <h3>The Moffet Building</h3>
         </div>
-    </div>
-    <p class="event-description"><%= description %></p>
-    <div class="event-people">
-        Featuring:
-        <ul>
-            <% _.each(people, function(p){ %>
-                <li><%= p %></li>
-            <% }); %>
-        </ul>
-    </div>
+
+        <div class="col">
+            <a href="http://www.brandeis.edu/about/visiting/map.html"><img class="map" src="/assets/brandeis_map.png"></a>
+        </div>
+
 </div>
 
-</script>
+<div class="section">
+    <h1 class="header">Full Schedule</h1>
 
+    
 
-<script>
+    <div class="event">
+        <div class="event-date">
+            Saturday Oct. 10 <span class="tod"> Morning</span>
+        </div>
+        
+        <div class="col program">
+            <div class="event-location">
+                <div class="dot blue"></div><div class="location">Shapiro Science Center Atrium</div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    
+                    <li>Op. 1 no. 2 Eb major</li>
+                    
+                    <li>Op. 1 no. 3 D major</li>
+                    
+                    <li>Op. 2 no. 4 F major</li>
+                    
+                    <li>Op. 2 no. 6 Bb major</li>
+                    
+                    <li>Op. 9 no. 1 C major</li>
+                    
+                    <li>Op. 9 no. 6 A major</li>
+                    
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        
+                        <li>Jason</li>
+                        
+                        <li>Isaac</li>
+                        
+                        <li>Amy</li>
+                        
+                        <li>Shay</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col program">
+            <div class="event-location">
+                <div class="dot red"></div><div class="location">Shapiro Campus Center Atrium</div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    
+                    <li>Op. 1 no. 0 Eb major</li>
+                    
+                    <li>Op. 1 no. 6 C major</li>
+                    
+                    <li>Op. 2 no. 2 E major</li>
+                    
+                    <li>Op. 9 no. 3 G major</li>
+                    
+                    <li>Op. 9 no. 4 d minor</li>
+                    
+                    <li>Op. 17 no. 3 Eb major "Double-Trill"</li>
+                    
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        
+                        <li>Susie</li>
+                        
+                        <li>Elaine</li>
+                        
+                        <li>Jon</li>
+                        
+                        <li>Josh</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 
+    
 
-function renderChart(site_data) {
+    <div class="event">
+        <div class="event-date">
+            Saturday Oct. 10 <span class="tod"> Afternoon</span>
+        </div>
+        
+        <div class="col program">
+            <div class="event-location">
+                <div class="dot blue"></div><div class="location">Shapiro Science Center Atrium</div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    
+                    <li>Op. 17 no. 2 F major "Sunshine"</li>
+                    
+                    <li>Op. 20 no. 3 g minor "The Squawk"</li>
+                    
+                    <li>Op. 20 no. 4 D major</li>
+                    
+                    <li>Op. 33 no. 3 C major "The Bird"</li>
+                    
+                    <li>Op. 33 no. 4 Bb major "The Jackalope's Progress"</li>
+                    
+                    <li>Op. 42 no. None d minor</li>
+                    
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        
+                        <li>Channing</li>
+                        
+                        <li>Aaron</li>
+                        
+                        <li>Maija</li>
+                        
+                        <li>Josh</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col program">
+            <div class="event-location">
+                <div class="dot red"></div><div class="location">Shapiro Campus Center Atrium</div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    
+                    <li>Op. 1 no. 1 Bb major "La Chasse / (The Hunt)"</li>
+                    
+                    <li>Op. 1 no. 4 G major</li>
+                    
+                    <li>Op. 2 no. 1 A major</li>
+                    
+                    <li>Op. 9 no. 2 Eb major</li>
+                    
+                    <li>Op. 9 no. 5 Bb major</li>
+                    
+                    <li>Op. 17 no. 4 c minor "Helium Balloon"</li>
+                    
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        
+                        <li>Jason</li>
+                        
+                        <li>Andrew</li>
+                        
+                        <li>Elaine</li>
+                        
+                        <li>Nicole</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 
-    // helpers
-    function translate(x, y) {
-            return 'translate(' + x + ',' + y + ')';
-    }
+    
 
-    function values(d) {
-        var values = []
-        for (var key in d) {
-            values.push(d[key]);
-        }
-        return values;
-    }
+    <div class="event">
+        <div class="event-date">
+            Saturday Oct. 10 <span class="tod"> Evening</span>
+        </div>
+        
+        <div class="col program">
+            <div class="event-location">
+                <div class="dot blue"></div><div class="location">Shapiro Science Center Atrium</div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    
+                    <li>Op. 17 no. 1 E major "I told you not to (do)!"</li>
+                    
+                    <li>Op. 17 no. 6 D major "Double-stop Largo"</li>
+                    
+                    <li>Op. 20 no. 1 Eb major</li>
+                    
+                    <li>Op. 20 no. 5 f minor</li>
+                    
+                    <li>Op. 33 no. 5 G major "How do you do?"</li>
+                    
+                    <li>Op. 33 no. 6 D major "Let's do it again"</li>
+                    
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        
+                        <li>Jason</li>
+                        
+                        <li>Isaac</li>
+                        
+                        <li>Elaine</li>
+                        
+                        <li>Shay</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col program">
+            <div class="event-location">
+                <div class="dot red"></div><div class="location">Shapiro Campus Center Atrium</div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    
+                    <li>Op. 17 no. 5 G major "Recitative"</li>
+                    
+                    <li>Op. 20 no. 2 C major "Star Wars"</li>
+                    
+                    <li>Op. 20 no. 6 A major</li>
+                    
+                    <li>Op. 33 no. 1 b minor "B Ambiguous"</li>
+                    
+                    <li>Op. 33 no. 2 Eb major "The Joke"</li>
+                    
+                    <li>Op. 50 no. 6 D major "The Frog"</li>
+                    
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        
+                        <li>Channing</li>
+                        
+                        <li>Andrew</li>
+                        
+                        <li>Amy</li>
+                        
+                        <li>Nicole</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 
-    function diff(arr) {
-        if (arr.length <=1) {
-            return arr;
-        }
-        diff_array = [];
-        for (var i = 1; i < arr.length; i++) {
-            diff_array.push(arr[i] - arr[i-1]);
-        }
-        return diff_array;
-    }
+    
 
-    function accum(arr) {
-        var accum_arr = [0];
-        for (var i = 0; i < arr.length; i++) {
-            accum_arr.push(arr[i] + accum_arr[i]);
-        }
-        return accum_arr;
-    }
+    <div class="event">
+        <div class="event-date">
+            Monday Oct. 12 <span class="tod"> Morning</span>
+        </div>
+        
+        <div class="col program">
+            <div class="event-location">
+                <div class="dot blue"></div><div class="location">Shapiro Science Center Atrium</div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    
+                    <li>Op. 50 no. 2 C major</li>
+                    
+                    <li>Op. 54 no. 3 E major</li>
+                    
+                    <li>Op. 55 no. 2 f minor "The Razor"</li>
+                    
+                    <li>Op. 64 no. 4 G major</li>
+                    
+                    <li>Op. 64 no. 3 Bb major</li>
+                    
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        
+                        <li>Ryan</li>
+                        
+                        <li>Andrew</li>
+                        
+                        <li>Amy</li>
+                        
+                        <li>Nicole</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col program">
+            <div class="event-location">
+                <div class="dot red"></div><div class="location">Shapiro Campus Center Atrium</div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    
+                    <li>Op. 50 no. 3 Eb major</li>
+                    
+                    <li>Op. 50 no. 5 F major "The Dream"</li>
+                    
+                    <li>Op. 54 no. 1 G major</li>
+                    
+                    <li>Op. 55 no. 3 Bb major</li>
+                    
+                    <li>Op. 64 no. 1 C major</li>
+                    
+                    <li>Op. 64 no. 5 D major "The Lark"</li>
+                    
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        
+                        <li>Susie</li>
+                        
+                        <li>Channing</li>
+                        
+                        <li>Jon</li>
+                        
+                        <li>Josh</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 
-    var quartets = site_data.quartets;
+    
 
-    // annotate the ones we've played
-    var now = new Date();
-    var next = site_data.events.filter(function(e){ return e.date > now;}).pop();
-    site_data.events.forEach(function(e) {
-        marker = e.date <= now ? 1 : e === next ? 2 : 0;
-        e.quartets.forEach(function(q) {
-            quartets[q.id].played = marker;
-        });
-    });
+    <div class="event">
+        <div class="event-date">
+            Monday Oct. 12 <span class="tod"> Afternoon</span>
+        </div>
+        
+        <div class="col program">
+            <div class="event-location">
+                <div class="dot red"></div><div class="location">Shapiro Campus Center Atrium</div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    
+                    <li>Op. 50 no. 1 Bb major "The Heartbeat"</li>
+                    
+                    <li>Op. 50 no. 4 f# minor "The Shrimp"</li>
+                    
+                    <li>Op. 54 no. 2 C major "The Rabbi"</li>
+                    
+                    <li>Op. 55 no. 1 A major</li>
+                    
+                    <li>Op. 64 no. 2 b minor</li>
+                    
+                    <li>Op. 64 no. 6 Eb major</li>
+                    
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        
+                        <li>Jason</li>
+                        
+                        <li>Isaac</li>
+                        
+                        <li>Elaine</li>
+                        
+                        <li>Shay</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col program">
+            <div class="event-location">
+                <div class="dot green"></div><div class="location">Mandel Center for the Humanities</div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    
+                    <li>Op. 71 no. 1 Bb major "App-on-yi-Quar-tet"</li>
+                    
+                    <li>Op. 74 no. 2 F major "The Military"</li>
+                    
+                    <li>Op. 76 no. 3 C major "Kaiser / (Emperor)"</li>
+                    
+                    <li>Op. 76 no. 6 Eb major "Scales to Neverland"</li>
+                    
+                    <li>Op. 77 no. 2 F major "The Tortoise and the Hare"</li>
+                    
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        
+                        <li>Andrew</li>
+                        
+                        <li>Ryan</li>
+                        
+                        <li>Amy</li>
+                        
+                        <li>Nicole</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 
-    var quartet_list = Object.keys(quartets).sort().map(function(key){
-        quartets[key].id = key;
-        return quartets[key];
-    });
+    
 
-    nested_quartets = d3.nest()
-                        .key(function(d) {return d.opus; })
-                        .entries(quartet_list);
+    <div class="event">
+        <div class="event-date">
+            Monday Oct. 12 <span class="tod"> Evening</span>
+        </div>
+        
+        <div class="col program">
+            <div class="event-location">
+                <div class="dot red"></div><div class="location">Shapiro Campus Center Atrium</div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    
+                    <li>Op. 71 no. 3 Eb major "Thou shalt not trill"</li>
+                    
+                    <li>Op. 74 no. 1 C major "Chromatic Scales"</li>
+                    
+                    <li>Op. 76 no. 2 d minor "Quinten / (Fifths)"</li>
+                    
+                    <li>Op. 76 no. 5 D major "Famous Largo"</li>
+                    
+                    <li>Op. 77 no. 1 G major "The Compliment"</li>
+                    
+                    <li>Op. 103 no. None d minor "Unfinished"</li>
+                    
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        
+                        <li>Jason</li>
+                        
+                        <li>Isaac</li>
+                        
+                        <li>Elaine</li>
+                        
+                        <li>Shay</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col program">
+            <div class="event-location">
+                <div class="dot blue"></div><div class="location">Shapiro Science Center Atrium</div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    
+                    <li>Op. 71 no. 2 D major "Popcorn"</li>
+                    
+                    <li>Op. 74 no. 3 g minor "The Rider"</li>
+                    
+                    <li>Op. 76 no. 1 G major "Graduation/Sneeze"</li>
+                    
+                    <li>Op. 76 no. 4 Bb major "The Sunrise"</li>
+                    
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        
+                        <li>Channing</li>
+                        
+                        <li>Susie</li>
+                        
+                        <li>Jon</li>
+                        
+                        <li>Josh</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+    </div>
 
-    var opus_lengths = nested_quartets.map(function(d) {return d.values.length;});
+    
 
-    var offsets = accum(opus_lengths);
-
-    var years = values(site_data.opus_completion_year).sort();
-    var date_spacings = accum(diff(years));
-
-    /* parameters */
-
-    var yr_spacing = 10; // pixels per year in this space
-
-    var width = 900;
-    var height = 100;
-
-    var opusSpacing = 20;
-    var lineSpacing = 5;
-    var lineHeight = 30;
-    var minSpacing = 4;
-
-    /*  --- */
-
-
-    var extent = d3.extent(quartet_list, function(d) {return d.measures;});
-    var scale = d3.scale.linear()
-                        .domain(extent)
-                        .range([0.3 * lineHeight, lineHeight]);
-
-    var tip = d3.tip()
-        .attr('class', 'd3-tip')
-        .offset([-10, 0])
-        .html(quartetName);
-
-
-    var svg = d3.select('#chart').append('svg')
-                .attr('width', width)
-                .attr('height', height)
-                .append('g')
-                .attr('transform', translate(0, 20));
-
-    svg.call(tip);
-
-    // render just the outside boxes first with labels
-    var opus_boxes = svg.selectAll("g")
-            .data(nested_quartets)
-            .enter().append('g')
-            .attr('transform', function(d, i) {
-                return translate(offsets[i] * lineSpacing + 0.5 + (date_spacings[i] * yr_spacing) + (i * minSpacing), 0);
-            });
-
-    opus_boxes.append('text')
-            .text(function(d) {
-                return d.key;
-            })
-            .attr('font-size', 10)
-            .attr("x", 0)
-            .attr("y", lineHeight + 10);
-
-    var quartet_box = opus_boxes.selectAll('line')
-            .data(function(d) {return d.values; })
-            .enter().append('line')
-            .attr("class", function(d, i) {
-                if (d.played == 1) {
-                    return "quartet-line-played";
-                } else if (d.played == 2){
-                    return "quartet-line-upcoming";
-                }
-                return "quartet-line-unscheduled";
-            })
-            .attr("y1", function(d) {
-                return (lineHeight - scale(d.measures));
-            })
-            .attr("y2", function(d) {
-                return lineHeight;
-            })
-            .attr("x1", function(d, i) {
-                return i * lineSpacing;
-            })
-            .attr("x2", function(d, i) {
-                return i * lineSpacing;
-            });
-
-    // handles so mouse hovering is easier
-    opus_boxes.selectAll('rect')
-        .data(function(d) {return d.values; })
-        .enter().append('rect')
-        .attr("class", "handle")
-        .attr("height", function(d) {
-            return scale(d.measures);
-        })
-        .attr("width", lineSpacing)
-        .attr("x", function(d, i) {
-            return i * lineSpacing - (lineSpacing / 2.0);
-        })
-        .attr("y", function(d) {
-            return lineHeight - scale(d.measures);
-        })
-        .on("mouseover", tip.show)
-        .on('mouseout', tip.hide);
-}
-
-function quartetName(d) {
-    var name = "Op. " + d.opus;
-    if (d['#'] != null) {
-        name += " No. " + d['#'];
-    }
-    if (d['nickname'][0]) {
-        name += " '" + d['nickname'][0] + "'";
-    }
-    return name;
-}
-
-var eventDateFormatter = d3.time.format('%b %-d');
-
-function eventPhoto(photo){
-    // rewrite links to fb photos to local links in case of fbcdn changes.
-    var q = photo.lastIndexOf('?')
-    var photo_name = photo.slice(photo.lastIndexOf('/')+1, q === -1 ? photo.length : q)
-    return "/assets/event_photos/" + photo_name;
-}
-
-d3.json('./data.json', function(data) {
-    var events = data.events;
-
-    // pre-process
-    events.forEach(function(event) {
-        event.quartets = event.quartets.map(function(quartet) {
-            data.quartets[quartet].id = quartet;
-            return data.quartets[quartet];
-        });
-        event.date = new Date(event.date);
-        event.photo = eventPhoto(event.photo);
-    });
-
-    // latest first
-    events = _.sortBy(events, function(e) {return -e.date;});
-    data.events = events;
-
-    // ok, now that we've done some preprocessing, render.
-    renderChart(data);
-
-    // don't show more than one event that hasn't occured yet
-    // just the next one.
-    var now = new Date();
-    var next = events.filter(function(e){return e.date > now;}).pop();
-    if (next) {
-        var past = events.filter(function(e){return e.date <= now;});
-        events = [next].concat(past);
-    }
-
-
-    events.forEach(function(event, idx) {
-        var compiled = _.template($('#event-template').html());
-        var el = $('<div id="event-' + idx + '" class="event">');
-        el.html(compiled(event));
-        $('#event-content').append(el);
-    });
-});
-
-</script>
+</div>
 
 </body>
 </html>

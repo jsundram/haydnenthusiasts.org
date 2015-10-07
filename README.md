@@ -3,6 +3,11 @@ haydnenthusiasts.org
 
 Haydn Enthusiasts website. [Visit it](http://haydnenthusiasts.org/).
 
+to build:
+```
+cd build
+python build.py
+```
 
 to deploy:
 ```
