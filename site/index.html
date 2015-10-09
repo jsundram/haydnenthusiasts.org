@@ -93,6 +93,12 @@
     /*color: #147BFF;*/
     color: #555;
 }
+.timerange {
+    font-variant: small-caps;
+    margin-left: 0px;
+    font-size: 16px;
+    /*color: #555;*/
+}
 
 .dot {
     width: 22px;
@@ -157,12 +163,14 @@ h3 {
 
         <div class="col">
             <h2>Brandeis University</h2>
-            <h3>Saturday, Oct 10</h3>
-            <h3>Monday, Oct 12</h3>
+            <h3>Saturday, Oct 10, <span class="timerange">8AM - 10PM</span></h3>
+            <h3>Monday, Oct 12,   <span class="timerange">8AM - 10PM</span></h3>
             <br>
-            <h3>Shapiro Campus Center Atrium</h3>
-            <h3>Shapiro Science Center Atrium</h3>
-            <h3>Mandel Center for the Humanities</h3>
+            <a href="http://www.brandeis.edu/about/visiting/map.html?bldgid=0110"><h3>Shapiro Campus Center Atrium</h3></a>
+            <a href="http://www.brandeis.edu/about/visiting/map.html?bldgid=0118-1"><h3>Shapiro Science Center Atrium</h3></a>
+            <a href="http://www.brandeis.edu/about/visiting/map.html?bldgid=0125-1"><h3>Mandel Center for the Humanities</h3></a>
+
+            <h3>Parking: <a href="http://www.brandeis.edu/about/visiting/map.html?bldgid=0128">Theater Lot</a></h3>
         </div>
 
         <div class="col">
@@ -183,7 +191,8 @@ h3 {
         
         <div class="col program">
             <div class="event-location">
-                <div class="dot blue"></div><div class="location">Shapiro Science Center Atrium</div>
+                <div class="dot blue"></div>
+                <div class="location">Shapiro Science Center Atrium  <span class="timerange">(8am &ndash; 12pm)</span></div>
             </div>
             <div class="event-body">
                 <ul class="event-works">
@@ -220,12 +229,13 @@ h3 {
         
         <div class="col program">
             <div class="event-location">
-                <div class="dot red"></div><div class="location">Shapiro Campus Center Atrium</div>
+                <div class="dot red"></div>
+                <div class="location">Shapiro Campus Center Atrium  <span class="timerange">(8:30am &ndash; 12pm)</span></div>
             </div>
             <div class="event-body">
                 <ul class="event-works">
                     
-                    <li>Op. 1 no. 0 Eb major</li>
+                    <li>Op. 1 in Eb major</li>
                     
                     <li>Op. 1 no. 6 C major</li>
                     
@@ -266,7 +276,8 @@ h3 {
         
         <div class="col program">
             <div class="event-location">
-                <div class="dot blue"></div><div class="location">Shapiro Science Center Atrium</div>
+                <div class="dot blue"></div>
+                <div class="location">Shapiro Science Center Atrium  <span class="timerange">(2pm &ndash; 6pm)</span></div>
             </div>
             <div class="event-body">
                 <ul class="event-works">
@@ -281,7 +292,7 @@ h3 {
                     
                     <li>Op. 33 no. 4 Bb major "The Jackalope's Progress"</li>
                     
-                    <li>Op. 42 no. None d minor</li>
+                    <li>Op. 42 in d minor</li>
                     
                 </ul>
                 <div class="event-people">
@@ -303,7 +314,8 @@ h3 {
         
         <div class="col program">
             <div class="event-location">
-                <div class="dot red"></div><div class="location">Shapiro Campus Center Atrium</div>
+                <div class="dot red"></div>
+                <div class="location">Shapiro Campus Center Atrium  <span class="timerange">(1pm &ndash; 5pm)</span></div>
             </div>
             <div class="event-body">
                 <ul class="event-works">
@@ -349,7 +361,8 @@ h3 {
         
         <div class="col program">
             <div class="event-location">
-                <div class="dot blue"></div><div class="location">Shapiro Science Center Atrium</div>
+                <div class="dot blue"></div>
+                <div class="location">Shapiro Science Center Atrium  <span class="timerange">(6pm &ndash; 10pm)</span></div>
             </div>
             <div class="event-body">
                 <ul class="event-works">
@@ -386,7 +399,8 @@ h3 {
         
         <div class="col program">
             <div class="event-location">
-                <div class="dot red"></div><div class="location">Shapiro Campus Center Atrium</div>
+                <div class="dot red"></div>
+                <div class="location">Shapiro Campus Center Atrium  <span class="timerange">(6pm &ndash; 10pm)</span></div>
             </div>
             <div class="event-body">
                 <ul class="event-works">
@@ -432,7 +446,8 @@ h3 {
         
         <div class="col program">
             <div class="event-location">
-                <div class="dot blue"></div><div class="location">Shapiro Science Center Atrium</div>
+                <div class="dot blue"></div>
+                <div class="location">Shapiro Science Center Atrium  <span class="timerange">(8am &ndash; 12pm)</span></div>
             </div>
             <div class="event-body">
                 <ul class="event-works">
@@ -467,7 +482,8 @@ h3 {
         
         <div class="col program">
             <div class="event-location">
-                <div class="dot red"></div><div class="location">Shapiro Campus Center Atrium</div>
+                <div class="dot red"></div>
+                <div class="location">Shapiro Campus Center Atrium  <span class="timerange">(8:30am &ndash; 12pm)</span></div>
             </div>
             <div class="event-body">
                 <ul class="event-works">
@@ -513,7 +529,44 @@ h3 {
         
         <div class="col program">
             <div class="event-location">
-                <div class="dot red"></div><div class="location">Shapiro Campus Center Atrium</div>
+                <div class="dot green"></div>
+                <div class="location">Mandel Center for the Humanities  <span class="timerange">(1pm &ndash; 5pm)</span></div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    
+                    <li>Op. 71 no. 1 Bb major "App-on-yi-Quar-tet"</li>
+                    
+                    <li>Op. 74 no. 2 F major "The Military"</li>
+                    
+                    <li>Op. 76 no. 3 C major "Kaiser / (Emperor)"</li>
+                    
+                    <li>Op. 76 no. 6 Eb major "Scales to Neverland"</li>
+                    
+                    <li>Op. 77 no. 2 F major "The Tortoise and the Hare"</li>
+                    
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        
+                        <li>Andrew</li>
+                        
+                        <li>Ryan</li>
+                        
+                        <li>Amy</li>
+                        
+                        <li>Nicole</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col program">
+            <div class="event-location">
+                <div class="dot red"></div>
+                <div class="location">Shapiro Campus Center Atrium  <span class="timerange">(1pm &ndash; 5pm)</span></div>
             </div>
             <div class="event-body">
                 <ul class="event-works">
@@ -548,41 +601,6 @@ h3 {
             </div>
         </div>
         
-        <div class="col program">
-            <div class="event-location">
-                <div class="dot green"></div><div class="location">Mandel Center for the Humanities</div>
-            </div>
-            <div class="event-body">
-                <ul class="event-works">
-                    
-                    <li>Op. 71 no. 1 Bb major "App-on-yi-Quar-tet"</li>
-                    
-                    <li>Op. 74 no. 2 F major "The Military"</li>
-                    
-                    <li>Op. 76 no. 3 C major "Kaiser / (Emperor)"</li>
-                    
-                    <li>Op. 76 no. 6 Eb major "Scales to Neverland"</li>
-                    
-                    <li>Op. 77 no. 2 F major "The Tortoise and the Hare"</li>
-                    
-                </ul>
-                <div class="event-people">
-                    Featuring:
-                    <ul>
-                        
-                        <li>Andrew</li>
-                        
-                        <li>Ryan</li>
-                        
-                        <li>Amy</li>
-                        
-                        <li>Nicole</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
     </div>
 
     
@@ -594,44 +612,8 @@ h3 {
         
         <div class="col program">
             <div class="event-location">
-                <div class="dot red"></div><div class="location">Shapiro Campus Center Atrium</div>
-            </div>
-            <div class="event-body">
-                <ul class="event-works">
-                    
-                    <li>Op. 71 no. 3 Eb major "Thou shalt not trill"</li>
-                    
-                    <li>Op. 74 no. 1 C major "Chromatic Scales"</li>
-                    
-                    <li>Op. 76 no. 2 d minor "Quinten / (Fifths)"</li>
-                    
-                    <li>Op. 76 no. 5 D major "Famous Largo"</li>
-                    
-                    <li>Op. 77 no. 1 G major "The Compliment"</li>
-                    
-                    <li>Op. 103 no. None d minor "Unfinished"</li>
-                    
-                </ul>
-                <div class="event-people">
-                    Featuring:
-                    <ul>
-                        
-                        <li>Jason</li>
-                        
-                        <li>Isaac</li>
-                        
-                        <li>Elaine</li>
-                        
-                        <li>Shay</li>
-                        
-                    </ul>
-                </div>
-            </div>
-        </div>
-        
-        <div class="col program">
-            <div class="event-location">
-                <div class="dot blue"></div><div class="location">Shapiro Science Center Atrium</div>
+                <div class="dot blue"></div>
+                <div class="location">Shapiro Science Center Atrium  <span class="timerange">(6pm &ndash; 8:30pm)</span></div>
             </div>
             <div class="event-body">
                 <ul class="event-works">
@@ -656,6 +638,44 @@ h3 {
                         <li>Jon</li>
                         
                         <li>Josh</li>
+                        
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="col program">
+            <div class="event-location">
+                <div class="dot red"></div>
+                <div class="location">Shapiro Campus Center Atrium  <span class="timerange">(6pm &ndash; 10pm)</span></div>
+            </div>
+            <div class="event-body">
+                <ul class="event-works">
+                    
+                    <li>Op. 71 no. 3 Eb major "Thou shalt not trill"</li>
+                    
+                    <li>Op. 74 no. 1 C major "Chromatic Scales"</li>
+                    
+                    <li>Op. 76 no. 2 d minor "Quinten / (Fifths)"</li>
+                    
+                    <li>Op. 76 no. 5 D major "Famous Largo"</li>
+                    
+                    <li>Op. 77 no. 1 G major "The Compliment"</li>
+                    
+                    <li>Op. 103 in d minor "Unfinished"</li>
+                    
+                </ul>
+                <div class="event-people">
+                    Featuring:
+                    <ul>
+                        
+                        <li>Jason</li>
+                        
+                        <li>Isaac</li>
+                        
+                        <li>Elaine</li>
+                        
+                        <li>Shay</li>
                         
                     </ul>
                 </div>

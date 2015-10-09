@@ -93,6 +93,12 @@
     /*color: #147BFF;*/
     color: #555;
 }
+.timerange {
+    font-variant: small-caps;
+    margin-left: 0px;
+    font-size: 16px;
+    /*color: #555;*/
+}
 
 .dot {
     width: 22px;
@@ -157,8 +163,8 @@ h3 {
 
         <div class="col">
             <h2>Brandeis University</h2>
-            <h3>Saturday, Oct 10</h3>
-            <h3>Monday, Oct 12</h3>
+            <h3>Saturday, Oct 10, <span class="timerange">8AM - 10PM</span></h3>
+            <h3>Monday, Oct 12,   <span class="timerange">8AM - 10PM</span></h3>
             <br>
             <a href="http://www.brandeis.edu/about/visiting/map.html?bldgid=0110"><h3>Shapiro Campus Center Atrium</h3></a>
             <a href="http://www.brandeis.edu/about/visiting/map.html?bldgid=0118-1"><h3>Shapiro Science Center Atrium</h3></a>
@@ -185,7 +191,8 @@ h3 {
         {% for session in event.sessions %}
         <div class="col program">
             <div class="event-location">
-                <div class="{{ session.location_class }}"></div><div class="location">{{ session.location }}</div>
+                <div class="{{ session.location_class }}"></div>
+                <div class="location">{{ session.location }}  <span class="timerange">({{ session.start }} &ndash; {{session.end}})</span></div>
             </div>
             <div class="event-body">
                 <ul class="event-works">
