@@ -138,7 +138,7 @@ def expand_work(work):
     mode = 'major' if work['key'].istitle() else 'minor'
     nickname = work['nickname'][0] if work['nickname'] else None
 
-    if work['#']:  # Op 42 and 103 are single works.
+    if work['#'] is not None:  # Op 42 and 103 are single works.
         base = 'Op. {opus} no. {#} {key} {mode}'.format(mode=mode, **work)
     else:
         base = 'Op. {opus} in {key} {mode}'.format(mode=mode, **work)
