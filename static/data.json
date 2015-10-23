@@ -189,7 +189,7 @@
             "#": 0,
             "hoboken": null,
             "key": "Eb",
-            "measures": 364, 
+            "measures": 364,
             "nickname": [""],
             "opus": 1
         },
@@ -197,7 +197,7 @@
             "#": 1,
             "hoboken": 1,
             "key": "Bb",
-            "measures": 276, 
+            "measures": 276,
             "nickname": ["La Chasse / (The Hunt)"],
             "opus": 1
         },
@@ -205,7 +205,7 @@
             "#": 2,
             "hoboken": 2,
             "key": "Eb",
-            "measures": 346, 
+            "measures": 346,
             "nickname": [""],
             "opus": 1
         },
@@ -746,86 +746,102 @@
             "opus": 103
         }
     },
-    "performers": {
-        "Andrew Wong": {
+    "performers": [
+        {
+            "name": "Andrew Wong",
             "blurb": "Andrew is a cofounder of the Haydn Enthusiasts and an Engineer at Postmates.",
             "instrument": "Violin",
             "photo": "Andrew Wong.jpg"
         },
-        "Jason Sundram": {
+        {
+            "name": "Jason Sundram",
             "blurb": "Jason is a Quantitative Engineer at Facebook, where he creates visualization applications to yield insights from petabytes of data. Before that, he was a Senior Data Scientist at PayPal, where he analyzed and visualized geo data. He is an avid violinist and chamber musician and cofounder of The Haydn Enthusiasts. He spends a lot of time exploring integrations of his passion for classical music with data visualization.",
             "instrument": "Violin",
             "photo": "Jason Sundram.jpg"
         },
-        "Elaine Leisinger": {
+        {
+            "name": "Elaine Leisinger",
             "blurb": "Elaine is a cofounder of the Haydn Enthusiasts, an avid musician, and a professor of mathematics at UMass Boston.",
             "instrument": "Viola",
             "photo": "Elaine Leisinger.jpg"
         },
-        "Lewis Patzner": {
+        {
+            "name": "Lewis Patzner",
             "blurb": "Lewis is an Oakland-based cellist and cofounder of the Haydn Enthusiasts.",
             "instrument": "Cello",
             "photo": "Lewis Patzner.jpg"
         },
-        "Korbinian Reidhammer": {
+        {
+            "name": "Korbinian Reidhammer",
             "blurb": "Korbinian works as a speech technologist, flies high in the sky, and grounds himself in music. He plays violin and viola.",
             "instrument": "Viola",
             "photo": "Korbinian Reidhammer.jpg"
         },
-        "Ivo Bokulic": {
+        {
+            "name": "Ivo Bokulic",
             "blurb": "Born in Croatia, raised in Chicago, and based in San Francisco, violist Ivo Bokulic is an active freelance musician in the Bay Area and beyond, performing with groups such as the San Jose Chamber Orchestra, Reno Philharmonic, Merced Symphony, Music in the Mountains, Stanford Philharmonia, Opera Parallele, and One Found Sound. As member of San Francisco's Magik*Magik Orchestra, Ivo has toured, recorded, and performed with acts such as Death Cab for Cutie, Sting, Chicago, and Third Eye Blind. He holds both B.M. and M.M. degrees from the San Francisco Conservatory of Music, where he studied with Jodi Levitz. He plays on a viola made in 1999 by Hiroshi Iizuka.",
             "instrument": "Viola",
             "photo": "Ivo Bokulic.png"
         },
-        "Nicole Boguslaw": {
+        {
+            "name": "Nicole Boguslaw",
             "blurb": "Nicole is a cellist hailing from West Friendship MD who is very excited about Haydn. She has studied at University of Louisville and Catholic University of America, and is now teaching, freelancing and playing orchestral and chamber music. After her recent move to the Bay Area, she is now studying with Amos Yang at the San Francisco Academy Orchestra.",
             "instrument": "Cello",
             "photo": "Nicole Boguslaw.jpg"
         },
-        "Yuri Kye": {
+        {
+            "name": "Yuri Kye",
             "blurb": "Yuri is an active freelance violinist, pianist, chamber musician, and instructor. She began her piano and theory training at age 5. She won the Idaho State Solo Competition on violin and viola in 2002 and 2003, and received full scholarships to several colleges and universities. Yuri studied political science and chamber music at University of Utah. Currently, Yuri maintains a private studio of over two dozen students, and performs with the Chabot Chamber Music Society in Oakland, Classical Revolution, and various regional orchestras and opera companies. She is an active session musician and has recorded for Jennifer Hudson, Nataly Dawn, The Golden Hearts, and Naked Fiction and has shared the stage with prominent indie rock acts such as The Album Leaf and Jarrod Gorbel.",
             "instrument": "Violin",
             "photo": "Yuri Kye.jpg"
         },
-        "Kevin Jim": {
+        {
+            "name": "Kevin Jim",
             "blurb": "Kevin Jim began playing the viola at Herbert Hoover Middle School, San Francisco. He was a scholarship student at the San Francisco Conservatory of Music, Preparatory Division, where he studied with Susan Bates. He was the principal violist with the San Francisco Symphony Youth Orchestra. While pursuing his bachelor's and master's degrees in civil and environmental engineering at UC Berkeley and the University of Illinois at Urbana-Champaign, Kevin continued his viola studies with Basil Vendryes, Gina Feinauer, Paul Yarbrough and Rudolf Haken. Kevin recently spent 3 years working in Hong Kong, where he performed with the Hong Kong Chamber Orchestra, the City Chamber Orchestra, and the Hong Kong Sinfonietta.",
             "instrument": "Viola",
             "photo": "Kevin Jim.jpg"
         },
-        "Gabriel Beistline": {
+        {
+            "name": "Gabriel Beistline",
             "blurb": "Gabriel's first introduction to the cello wasn't until the age of fifteen. However, he quickly found himself collaborating with some of the most prominent and influential musicians of our time, including Christoph Eschenbach, Yutaka Sado, Yo-Yo Ma, Christopher Hogwood, Kent Nagano, Yakov Kreitzberg and Valery Gergiev.  He has toured with orchestras throughout the United States, Germany, Lithuania, Armenia, Russia and Japan. Gabriel has also enjoyed many experiences as a chamber musician, including a performance of Felix Mendelssohn's String Octet with violin virtuoso Cho Liang-Lin, James Dunham of the Cleveland Quartet, and Lynn Harrell, in a concert series commemorating Mendelssohn's 200th birthday. Gabriel holds a BM from the New England Conservatory under the instruction of Yeesun Kim, cellist in the Borromeo String Quartet. He also earned a Masters in Music from Rice University under the tutelage of Lynn Harrell.",
             "instrument": "Cello",
             "photo": "Gabriel Beistline.jpg"
         },
-        "Clio Tilton": {
+        {
+            "name": "Clio Tilton",
             "blurb": "Clio can be heard around the Bay Area in a wide range of groups: early music ensembles, symphony orchestras, chamber groups, and bands. She performs regularly as a substitute with the San Francisco Symphony, the San Francisco Chamber Orchestra, Magik Magik Orchestra, and other regional orchestras. As a chamber musician, Clio has performed with the Friction Quartet, Classical Revolution, and the Chamber Music Society of San Francisco. An early music specialist, Clio performs with the American Bach Soloists, the San Francisco Bach Choir, Jubilate Orchestra, and Musa. Chamber music is a central part of Clio's musical pursuits. She spent three summers at the Kneisel Hall Chamber Music Festival in Maine and has coached chamber music with the Juilliard String Quartet, Misha Amory of the Brentano Quartet, and Sylvia Rosenberg. At Juilliard, she was a member of the award-winning Calla Quartet. Most recently, Clio has become passionate about finding ways to share chamber music with audiences on a personal level through her work with the Chamber Music Society of San Francisco.",
             "instrument": "Viola",
             "photo": "Clio Tilton.jpg"
         },
-        "Jen Mathers": {
+        {
+            "name": "Jen Mathers",
             "blurb": "Jen is a cellist and pianist who studied music and environmental sciences at Northwestern University, and received a Masters in Environmental Management from Yale's School of Forestry and Environmental Studies.  She has played in orchestras and chamber music ensembles for over 20 years, including at the Kennedy Center, Fischoff national chamber music competition, and countless weddings, parties, musical theater productions, and late night chamber jams.  She has studied cello with Hans J\u00f8rgen Jensen at Northwestern and Yvonne Caruthers of the National Symphony Orchestra.  She is currently principal cellist for Symphony Parnassus in San Francisco and the Solano Symphony, and has performed professionally with many other orchestras such as the Napa Valley Symphony, Livermore Valley Opera, Berkeley Community Chorus & Orchestra, Viva la Musica, and Bay Area Classical Harmonies.  She performs regularly with Classical Revolution and in Bay-Area chamber music concerts.",
             "instrument": "Cello",
             "photo": "Jen Mathers.jpg"
         },
-        "Nigel Armstrong": {
+        {
+            "name": "Nigel Armstrong",
             "blurb": "A native of Sonoma, California, Nigel Armstrong has recently been brought to international attention by winning awards in several prestigious violin competitions. These include the Buenos Aires International Violin Competition in Argentina, the Yehudi Menuhin Young Violinists International Competition in Norway, and the International Tchaikovsky Competition in Russia.",
             "instrument": "Violin",
             "photo": "Nigel Armstrong.jpg"
         },
-        "Jessica Chang": {
+        {
+            "name": "Jessica Chang",
             "blurb": "Jessica Chang is passionate about building communities through technology and music for all. As a violist, she studied at the Curtis Institute of Music and The Juilliard School, and founded Chamber Music by the Bay, a series that brings interactive concerts to youth and communities throughout the SF Bay Area.  Jessica has worked toward improved youth access to arts education through the School District of Philadelphia’s ArtsRising initiative, and as a Yale undergrad (04-08), taught for K-12 enrichment programs in New Haven, CT; Palo Alto, CA; San Jose, CA, and San Francisco. After a decade of surviving solid East Coast winters, Jessica recently relocated to the Bay Area to join the engineering, product, and design recruiting team at Dropbox.",
             "instrument": "Viola",
             "photo": "Jessica Chang.jpg"
         },
-        "Shay Rudolph": {
+        {
+            "name": "Shay Rudolph",
             "blurb": "Shay Rudolph is the assistant principal cellist of the New Bedford Symphony, principal cellist of the New Hampshire Philharmonic, and a Red Chair Society member of the Orchestra of Indian Hill. Past performance highlights include the North American tour of Star Wars: In Concert; playing electric cello with her rock band; and studying film music at the Henry Mancini Institute.  Shay earned a BM & MM from Boston University, where she studied cello with Michael Reynolds, Leslie Parnas and George Neikrug.  She maintains a private teaching studio in North Chelmsford, MA and serves on the faculty of Clark University.",
             "instrument": "Cello",
             "photo": "Shay Rudolph.jpg"
         },
-        "Isaac Krauss": {
+        {
+            "name": "Isaac Krauss",
             "blurb": "Isaac is Associate Professor of Chemistry at <a href=\"http://people.brandeis.edu/~kraussi/\">Brandeis University</a>, where he does research on HIV vaccines and unnatural DNA. A native of Fairbanks, Alaska, Isaac grew to love the violin as it was an attractive indoor activity for keeping warm during snow storms. Although Isaac was once vigorously opposed to playing any Haydn string quartets, in 2007 he \"saw the light\" and since then has played Haydn with insatiable avidity.",
             "instrument": "Violin",
             "photo": "Isaac Krauss.jpg"
         }
-    }
+    ]
 }

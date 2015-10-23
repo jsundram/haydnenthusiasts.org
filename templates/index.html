@@ -1,18 +1,17 @@
-<!doctype html>
-<html>
-<head>
-    <meta property="og:title" content="Performances by The Haydn Enthusiasts"/>
-    <meta property="og:site_name" content="The Haydn Enthusiasts"/>
-    <meta property="og:url" content="http://www.haydnenthusiasts.org/index.html"/>
-    <meta property="og:description" content="View our upcoming concerts, previous concerts, and track our progress through our complete cycle of Haydn's 67.5 String Quartets."/>
-    <meta property="og:image" content="http://www.haydnenthusiasts.org/assets/haydn_sq_full.png"/>
+{% extends "base.html" %}
 
-    <title>Haydn Enthusiasts</title>
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-</head
-<body>
+{% block title %}Haydn Enthusiasts{% endblock %}
 
+{% block meta %}
+{{ super() }}
+<meta property="og:title" content="Performances by The Haydn Enthusiasts"/>
+<meta property="og:description" content="View our upcoming concerts, previous concerts, and track our progress through our complete cycle of Haydn's 67.5 String Quartets."/>
+
+<script type="text/javascript" src="./js/processing-1.4.1.min.js"></script>
+<script type="text/javascript" src="./js/face.js"></script>
+{% endblock %}
+
+{% block content %}
 <style>
 
 #event-content {
@@ -179,22 +178,11 @@ rect {
 }
 
 </style>
-<div id="header">
-        <a href="/about.html"><img src="/assets/haydn_sq_50.png"></img></a>
-        <h1>THE HAYDN ENTHUSIASTS</h1>
-        <ul>
-            <li><a href="/about.html">ABOUT</a></li>
-            <li><a class="active" href="/">CONCERTS</a></li>
-            <li><a href="/enthusiasts.html">ENTHUSIASTS</a></li>
-            <li><a href="http://fb.me/haydnenthusiasts">FACEBOOK</a></li>
-            <li><a href="https://twitter.com/haydnenthusiast">TWITTER</a></li>
-        </ul>
-</div>
-<div id="container">
+
 <div id="event-content"></div>
-<div id="chart">
-    <h1>CONCERTS</h1>
-</div>
+    <div id="chart">
+        <h1>CONCERTS</h1>
+    </div>
 </div>
 
 
@@ -455,6 +443,4 @@ d3.json('./data.json', function(data) {
 });
 
 </script>
-
-</body>
-</html>
+{% endblock %}

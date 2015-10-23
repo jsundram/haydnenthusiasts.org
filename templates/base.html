@@ -1,0 +1,38 @@
+<!doctype html>
+<html>
+<head>
+    {% block meta %}
+    <meta property="og:site_name" content="The Haydn Enthusiasts"/>
+    <meta property="og:image" content="http://www.haydnenthusiasts.org/assets/haydn_sq_full.png"/>
+    <meta property="og:url" content="http://www.haydnenthusiasts.org/index.html"/>
+    <meta charset="UTF-8">
+    <title>{% block title %}{% endblock %}</title>
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    {% endblock %}
+</head
+<body>
+
+<div id="header">
+        <a href="/about.html"><img src="/assets/haydn_sq_50.png"></img></a>
+        <h1>THE HAYDN ENTHUSIASTS</h1>
+        <ul>
+            {% macro checkActive(name) -%}
+                {% if name == template_name %}active{% endif %}
+            {%- endmacro %}
+            <li><a class="{{ checkActive('about.html') }}" href="/about.html">ABOUT</a></li>
+            <li><a class="{{ checkActive('index.html') }}" href="/">CONCERTS</a></li>
+            <li><a class="{{ checkActive('enthusiasts.html') }}" href="/enthusiasts.html">ENTHUSIASTS</a></li>
+            <li><a class="{{ checkActive('haydn_seek.html') }}" href="/haydn_seek.html">HAYDN SEEK 2015</a><li>
+            <li><a href="http://fb.me/haydnenthusiasts">FACEBOOK</a></li>
+            <li><a href="https://twitter.com/haydnenthusiast">TWITTER</a></li>
+        </ul>
+</div>
+
+<div id="container">
+{% block content %}
+{% endblock %}
+</div>
+
+</body>
+</html>

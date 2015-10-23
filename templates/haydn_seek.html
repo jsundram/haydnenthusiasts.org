@@ -1,18 +1,13 @@
-<!doctype html>
-<html>
-<head>
-    <meta property="og:title" content="About The Haydn Enthusiasts"/>
-    <meta property="og:site_name" content="The Haydn Enthusiasts"/>
-    <meta property="og:url" content="http://www.haydnenthusiasts.org/about.html"/>
-    <meta property="og:description" content="The Haydn Enthusiasts were founded in May 2013 by Andrew Wong, Elaine Leisinger, Jason Sundram, and Lewis Patzner. We were brought together by a shared enjoyment of Haydn's String Quartets, and formed The Enthusiasts out of a desire to explore all 67.5 of them, and share our journey and enthusiasm with as many people as we can along the way."/>
-    <meta property="og:image" content="http://www.haydnenthusiasts.org//assets/haydn_sq_full.png"/>
+{% extends "base.html" %}
+{% block title %}Haydn Seek 2015{% endblock %}
 
-    <title>Haydn Enthusiasts</title>
-    <link href='http://fonts.googleapis.com/css?family=Lato:300,400' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="css/main.css">
-</head
-<body>
+{% block meta %}
+{{ super() }}
+<meta property="og:title" content="Haydn Seek 2015"/>
+<meta property="og:description" content=""/>
+{% endblock %}
 
+{% block content %}
 <style>
 
 #container {
@@ -135,19 +130,6 @@ h3 {
 }
 </style>
 
-<div id="header">
-    <a href="/about.html"><img src="/assets/haydn_sq_50.png"></img></a>
-    <h1>THE HAYDN ENTHUSIASTS</h1>
-    <ul>
-        <li><a class="active" href="/about.html">ABOUT</a></li>
-        <li><a href="/">CONCERTS</a></li>
-        <li><a href="/enthusiasts.html">ENTHUSIASTS</a></li>
-        <li><a href="http://fb.me/haydnenthusiasts">FACEBOOK</a></li>
-        <li><a href="https://twitter.com/haydnenthusiast">TWITTER</a></li>
-    </ul>
-</div>
-<div id="container">
-
 <div class="special">
     <h1>SPECIAL EVENT</h1>
 </div>
@@ -218,7 +200,4 @@ h3 {
     {% endfor %}
 
 </div>
-
-</body>
-</html>
-
+{% endblock %}

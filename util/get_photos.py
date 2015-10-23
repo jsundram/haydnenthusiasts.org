@@ -5,8 +5,8 @@ import os
 from PIL import Image
 
 
-directory = './assets/event_photos/'
-with open('data.json') as f:
+directory = '../static/assets/event_photos/'
+with open('../static/data.json') as f:
     data = json.load(f)
 
 for event in data['events']:
