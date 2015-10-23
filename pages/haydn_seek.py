@@ -25,8 +25,8 @@ def get_location_class(location):
         return 'dot green'
 
 
-def haydn_seek():
-    WORKS = json.load(open('./static/data.json', 'r'))['quartets']
+def get_context():
+    works = json.load(open('./static/data.json', 'r'))['quartets']
     events = [
         {
             "date": "Saturday Oct. 10",
@@ -131,7 +131,7 @@ def haydn_seek():
         for session in event['sessions']:
             session['location_class'] = get_location_class(session['location'])
             session['works'] = [
-                expand_work(WORKS[work]) for work in session['works']]
+                expand_work(works[work]) for work in session['works']]
 
     return {'events': events}
 
