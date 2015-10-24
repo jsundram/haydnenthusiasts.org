@@ -52,9 +52,10 @@ h3 {
 </div>
 <div id="people">
 {% for performer in performers %}
-<div id="person-{{loop.counter}}" class="person">
+<a name="{{ performer.link }}"></a>
+<div class="person">
 <div class="person-left">
-    <a name=""><img class="person-image" src="{{ performer.photo }}"></img></a>
+    <img class="person-image" src="{{ performer.photo }}"></img>
     <h2>{{ performer.name }}</h2>
     <h3>{{ performer.instrument }}</h3>
 </div>

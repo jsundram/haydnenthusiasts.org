@@ -217,7 +217,7 @@ rect {
         Featuring:
         <ul>
             <% _.each(people, function(p){ %>
-                <li><%= p %></li>
+                <li><a href="/enthusiasts.html#<%= p.link %>"><%= p.name %></a></li>
             <% }); %>
         </ul>
     </div>
@@ -415,6 +415,12 @@ d3.json('./data.json', function(data) {
         });
         event.date = new Date(event.date);
         event.photo = eventPhoto(event.photo);
+        event.people = event.people.map(function(person) {
+            return {
+                name: person,
+                link: person.replace(' ', '_')
+            }
+        });
     });
 
     // latest first
