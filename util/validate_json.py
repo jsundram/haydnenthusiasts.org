@@ -1,4 +1,3 @@
-#!/usr/bin/python
 import json
 """To get valid json, it's helpful to insert via
 
