@@ -82,7 +82,7 @@ def get_context():
             "sessions": [
                 {
                     "location": "Shapiro Science Center Atrium",
-                    "performers": ["Ryan", "Andrew", "Amy", "Nicole"],
+                    "performers": ["Ryan", "Andrew", "Matthew", "Nicole"],
                     "works": ["050_2", "054_3", "055_2", "064_4", "064_3"]
                 },
                 {
@@ -103,7 +103,7 @@ def get_context():
                 },
                 {
                     "location": "Mandel Center for the Humanities",
-                    "performers": ["Andrew", "Ryan", "Amy", "Nicole"],
+                    "performers": ["Andrew", "Ryan", "Justin", "Nicole"],
                     "works": ["071_1", "074_2", "076_3", "076_6", "077_2"]
                 }
             ]
