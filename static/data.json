@@ -156,12 +156,21 @@
         },
         {
             "title": "22 years apart: Opus 17 & 74 (Part III)",
-            "people": ["Andrew Wong", "Jason Sundram", "Elaine Leisinger", "Nicole Boguslaw"],
+            "people": ["Andrew Wong", "Jason Sundram", "Meredith Kufchak", "James Jaffe"],
             "quartets": ["017_1", "074_3"],
             "date": "02/19/2015",
             "event_link": "https://www.facebook.com/events/567211236743643/",
             "description": "What a difference 22 years makes! This month, The Haydn Enthusiasts present Opus 17 #1 in E-major, written in 1771, from Haydn's early experiments with the string quartet, together with Opus 74 #3 in g-minor, nicknamed \"The Rider\", written in 1793 and dedicated to Count Apponyi. \n\nAlthough these quartets are separated by 22 years, and are stylistically quite different, they are connected by key -- The Rider, interestingly, has an E-major slow movement.\n\nThis concert concludes our pairings of Opus 17 with Opus 74.",
             "photo": "https://fbcdn-sphotos-h-a.akamaihd.net/hphotos-ak-xpa1/v/t1.0-9/67354_743641162358272_5108550578606257549_n.jpg?oh=2ac0f165913f7357a548b2614e518115&oe=54E75A33&__gda__=1423692366_842eb6736c59e9cbbfd5b09e4776393c"
+        },
+        {
+            "title": "The Cycle Resumes: Op. 42 & Op. 9 no. 2",
+            "people": ["Andrew Wong", "Jason Sundram", "Elaine Leisinger", "Jen Mathers"],
+            "quartets": ["042", "009_2"],
+            "date": "06/19/2015",
+            "event_link": "https://www.facebook.com/events/447576362088963/",
+            "description": "We're happy to return to Vessel Gallery! We're kicking off the summer with Haydn's Quartets Opus 9 #2 in E-flat (1767) and Opus 42 in d minor (1784).",
+            "photo": "https://fbcdn-sphotos-c-a.akamaihd.net/hphotos-ak-xfa1/v/t1.0-9/11401436_839058476149873_5319039993283405415_n.jpg?oh=3566367e73d88ccd25bf538b513a4261&oe=56C16AC8&__gda__=1455270654_dda070f18c8ca2ae5eba9127025a9fcb"
         }
     ],
 
@@ -830,6 +839,18 @@
             "blurb": "Jessica Chang is passionate about building communities through technology and music for all. As a violist, she studied at the Curtis Institute of Music and The Juilliard School, and founded Chamber Music by the Bay, a series that brings interactive concerts to youth and communities throughout the SF Bay Area.  Jessica has worked toward improved youth access to arts education through the School District of Philadelphia’s ArtsRising initiative, and as a Yale undergrad (04-08), taught for K-12 enrichment programs in New Haven, CT; Palo Alto, CA; San Jose, CA, and San Francisco. After a decade of surviving solid East Coast winters, Jessica recently relocated to the Bay Area to join the engineering, product, and design recruiting team at Dropbox.",
             "instrument": "Viola",
             "photo": "Jessica Chang.jpg"
+        },
+        {
+            "name": "Meredith Kufchak",
+            "blurb": "Meredith began her musical studies at the age of 4 with Deborah Price. Born into a musical family of 6 siblings, she has been surrounded by musicians her entire life. Ms. Kufchak obtained her Bachelors of Music at Rice University's Shephard School of Music on full scholarship as a student of Ivo-Jan van der Werff; she is currently studying with Jodi Levitz at the San Francisco Conservatory of Music for a Masters in Chamber Music.",
+            "instrument": "Viola",
+            "photo": "Meredith Kufchak.jpg"
+        },
+        {
+            "name": "James Jaffe",
+            "blurb": "James is a founding member of the Thalia Quartet, and co-founder of the prizewinning San Andreas Trio and Trio Gestalt. His teachers include Stephen Geber, Richard Aaron, and Milly Rosner, and his chamber music mentors include members of the Juilliard, Cleveland, Takacs, Tokyo, Brentano, Artis, Emerson, and St. Lawrence Quartets. Mr.Jaffe holds degrees in performance from the University of Michigan and the Cleveland Institute of Music. He is a current member of the Canton Symphony Orchestra and has also played in the Akron Symphony Orchestra and the Stockton Symphony.",
+            "instrument": "Cello",
+            "photo": "James Jaffe.jpg"
         },
         {
             "name": "Shay Rudolph",
