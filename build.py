@@ -47,7 +47,7 @@ def render():
     loader = FileSystemLoader(TEMPLATE_ROOT)
     env = Environment(loader=loader)
 
-    for name, context in SITE.iteritems():
+    for name, context in SITE.items():
         print('building', name)
         template = env.get_template(name)
 
@@ -61,14 +61,14 @@ def render():
 
         out_file = os.path.join(SITE_DEPLOY, name)
 
-        with open(out_file, 'w') as f:
+        with open(out_file, 'wb') as f:
             f.write(out.encode('utf-8'))
 
 
 def main():
     stage()
     render()
-    print 'finished'
+    print('finished')
 
 
 if __name__ == "__main__":

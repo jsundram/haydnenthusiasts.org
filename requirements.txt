@@ -1,2 +1,2 @@
-Jinja2==2.7.3
-watchdog==0.8.3
+Jinja2==3.1.4
+watchdog==5.0.3
