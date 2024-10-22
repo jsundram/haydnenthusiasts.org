@@ -432,12 +432,14 @@ d3.json('./data.json', function(data) {
 
     // don't show more than one event that hasn't occured yet
     // just the next one.
+    /*
     var now = new Date();
     var next = events.filter(function(e){return e.date > now;}).pop();
     if (next) {
         var past = events.filter(function(e){return e.date <= now;});
         events = [next].concat(past);
     }
+    */
 
 
     events.forEach(function(event, idx) {
