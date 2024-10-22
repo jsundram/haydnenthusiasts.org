@@ -770,8 +770,8 @@
         },
         {
             "name": "Elaine Leisinger",
-            "blurb": "Elaine is a cofounder of the Haydn Enthusiasts, an avid musician, and a professor of mathematics at UMass Boston.",
-            "instrument": "Viola",
+            "blurb": "Elaine Leisinger, violist, violinist, and sometime collaborative pianist, is a keen chamber musician and orchestral player and a proud cofounder of the Haydn Enthusiasts. She is honored to share her love of live music-making in venues from living rooms to concert halls throughout New England, and takes a special interest in exploring less-familiar repertoire and increasing its accessibility for both players and audiences. In Elaine’s non-musical life, she has taught math at the high school and college levels, and currently serves as a research administrator at Brandeis University.",
+            "instrument": "Viola, Violin",
             "photo": "Elaine Leisinger.jpg"
         },
         {
@@ -863,6 +863,12 @@
             "blurb": "Isaac is a Professor of Chemistry at <a href=\"http://people.brandeis.edu/~kraussi/\">Brandeis University</a>, where he does research on HIV vaccines and unnatural DNA. A native of Fairbanks, Alaska, Isaac grew to love the violin as it was an attractive indoor activity for keeping warm during snow storms. Although Isaac was once vigorously opposed to playing any Haydn string quartets, in 2007 he \"saw the light\" and since then has played Haydn with insatiable avidity.",
             "instrument": "Violin",
             "photo": "Isaac Krauss.jpg"
+        },
+        {
+            "name": "Josh Packard",
+            "blurb": "Josh Packard, cello, enjoys playing a wide variety of music, with a particular interest in chamber music. As a frequent collaborator with the Haydn Enthusiasts, he is looking forward to completing the cycle of all of Haydn's string quartets. Josh enjoys both modern and historically-informed performance, and has performed with numerous ensembles in the Boston area and elsewhere. As a music major at Harvard University, Josh studied music theory, musicology, and composition in addition to performance. When not playing music, Josh works on data and reporting for Harvard Alumni Affairs and Development.",
+            "instrument": "Cello",
+            "photo": "Josh Packard.jpg"
         }
     ]
 }
