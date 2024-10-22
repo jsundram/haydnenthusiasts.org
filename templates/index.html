@@ -201,16 +201,19 @@ rect {
 
 <div class="event-content">
     <div class="image">
-        <img src="<%= photo %>"></img>
-        <div class="tint"></div>
-        <div class="photo-caption">
-            <h2 class="event-title"><%= title %></h2>
-            <h2 class="event-quartets">
-            <% _.each(quartets, function(q){ %>
-                <%= quartetName(q) %><br>
-            <% }); %>
-            </h2>
-        </div>
+        <!-- https://stackoverflow.com/questions/15551779/open-link-in-new-tab-or-window -->
+        <a href="<%= event_link %>" target="_blank" rel="noopener noreferrer">
+            <img src="<%= photo %>"></img>
+            <div class="tint"></div>
+            <div class="photo-caption">
+                <h2 class="event-title"><%= title %></h2>
+                <h2 class="event-quartets">
+                <% _.each(quartets, function(q){ %>
+                    <%= quartetName(q) %><br>
+                <% }); %>
+                </h2>
+            </div>
+        </a>
     </div>
     <p class="event-description"><%= description %></p>
     <div class="event-people">
