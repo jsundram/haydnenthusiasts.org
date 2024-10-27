@@ -16,7 +16,9 @@ deploy_with_s3cmd() {
 
 deploy_with_aws() {
     echo "Deploying with AWS CLI..."
-    aws s3 sync . s3://www.haydnenthusiasts.org/ --acl public-read
+    echo "Note: There is a small chance that this command may fail to update a file if its size hasn't changed."
+    echo "Note: Add a byte if necessary to force an upload"
+    aws s3 sync . s3://www.haydnenthusiasts.org/ --acl public-read --size-only --delete
     return $?
 }
 
