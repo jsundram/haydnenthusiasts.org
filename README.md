@@ -26,10 +26,14 @@ aws cloudfront create-invalidation --distribution-id EA8YGAHXI8LCE --paths "/ind
 
 ### To avoid the build / watch / deploy steps above:
 ```
-cp post-commit.py ./.git/hooks/post-commit
-chmod +x ./.git/hooks/post-commit
+$ git config core.hooksPath .githooks
 ```
-Then, the site will build, deploy, and invalidate paths appropriately after each commit.
+
+Then, the site will build, deploy, and invalidate paths appropriately after each commit,
+due to the `.githooks/post-commit` script (written in Python3), which is run after each commit.
+
+If it doesn't run, make sure it's executable, and try running it manually from the repository root
+```.githooks/post-commit```
 
 ### to add new events:
 Update `data.json`. 
