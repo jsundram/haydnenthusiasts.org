@@ -77,6 +77,10 @@ class S3:
         """Upload a single file to S3."""
         s3_path = f"{self.bucket_name}/{file_path}"
 
+        # TODO: could take many files and use an approach like:
+        # aws s3 sync {s3_path} --exclude "*" --include "{file1}" --include "{file2}"
+        # see https://stackoverflow.com/questions/31536400/
+
         print(f"Uploading {file_path}", file=sys.stderr)
         command = shlex.split(f'aws s3 cp "{file_path}" "{s3_path}"')
         return run_command(self, command, cwd=self.site_dir)
