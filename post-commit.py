@@ -1,0 +1,190 @@
+#!/usr/bin/env python3
+"""
+To install this script, copy it to .git/hooks/post-commit and chmod +x
+or `ln -s post-commit.py .git/hooks/post-commit`
+
+This script exists to do the following upon commit:
+    1. build the site
+    2. Update only the changed files in the s3 bucket.
+    3. Remove any newly unused files from the s3 bucket.
+    4. Invalidate the updated paths in the cloudfront distribution.
+
+Note that for the s3 steps (2 & 3) we could get *similar* results as the diffing done here
+via something like `aws s3 sync . s3://www.haydnenthusiasts.org/ --acl public-read --size-only --delete`
+However, `s3 sync` doesn't checksum files, it only uses filesize or mtime, and we need to build a list
+of modified files on our own anyway for the invalidation anyway, see below.
+
+Path invalidation is free for the first 1,000 paths/month, but costs $5 for each additional thousand,
+so being frugal with invalidations (instead of --paths "*"). This is perhaps a bit overcautious, since
+with the ~75 files we currently deploy, this gives 13 free deploys per month.
+"""
+
+import argparse
+import hashlib
+import json
+import os
+import shlex
+import subprocess
+import sys
+import time
+
+from pathlib import Path
+
+
+def dry_run_command(caller, command):
+    """for dry runs only"""
+    print("{}: {}".format(caller.__class__, command), file=sys.stderr)
+    return True
+
+
+def run_command(caller, command, cwd=None):
+    """Run a command"""
+    print("{}: {}".format(caller.__class__, command), file=sys.stderr)
+    result = None
+    try:
+        r = subprocess.run(command, capture_output=True, text=True, check=True, cwd=cwd)
+
+        if r.stdout:
+            print(r.stdout)
+        if r.stderr:
+            print(r.stderr, file=sys.stderr)
+    except Exception as e:
+        print(f"Command failed: {e}", file=sys.stderr)
+        raise
+
+    return result
+
+
+class CloudFront:
+    def __init__(self, distribution_id):
+        self.distribution_id = distribution_id
+
+    def invalidate_paths(self, paths):
+        command = shlex.split(
+            f"aws cloudfront create-invalidation --distribution-id %s --paths"
+            % self.distribution_id
+        )
+        command.extend(paths)
+        return run_command(self, command)
+
+
+class S3:
+    def __init__(self, bucket, site_dir):
+        self.bucket_name = f"s3://{bucket}" if "s3://" not in bucket else bucket
+        self.site_dir = site_dir
+
+    def upload(self, file_path):
+        """Upload a single file to S3."""
+        s3_path = f"{self.bucket_name}/{file_path}"
+
+        print(f"Uploading {file_path}", file=sys.stderr)
+        command = shlex.split(f'aws s3 cp "{file_path}" "{s3_path}"')
+        return run_command(self, command, cwd=self.site_dir)
+
+    def delete(self, file_path):
+        """Delete a single file from S3."""
+        s3_path = f"{self.bucket_name}/{file_path}"
+
+        print(f"Deleting {file_path} from s3", file=sys.stderr)
+        command = shlex.split(f'aws s3 rm "{s3_path}"')
+        return run_command(self, command)
+
+
+class DirectoryMonitor:
+    def __init__(self, directory=".", state_file=".dirstate.json"):
+        self.directory = Path(directory)
+        self.state_file = Path(state_file)
+        print(
+            "Reading last deploy information from {}".format(self.state_file),
+            file=sys.stderr,
+        )
+        try:
+            with open(self.state_file) as f:
+                self.state = json.load(f)
+        except (FileNotFoundError, json.JSONDecodeError):
+            print("no state file found at {}".format(self.state_file), file=sys.stderr)
+            self.state = {}
+
+    def get_current_state(self):
+        """Get current state of all files and their checksums."""
+        state = {}
+        start = time.time()
+        for path in self.directory.rglob("*"):
+            if path.is_file():
+                try:
+                    sha256 = hashlib.sha256()
+                    with open(path, "rb") as f:
+                        for chunk in iter(lambda: f.read(4096), b""):
+                            sha256.update(chunk)
+                    state[str(path.relative_to(self.directory))] = sha256.hexdigest()
+                except (PermissionError, FileNotFoundError):
+                    continue
+        print(
+            "get_current_state took {:.2f} seconds".format(time.time() - start),
+            file=sys.stderr,
+        )
+        return state
+
+    def check_changes(self):
+        """Compare current state with previous state."""
+        current = self.get_current_state()
+
+        created = sorted(set(current) - set(self.state))
+        deleted = sorted(set(self.state) - set(current))
+        updated = sorted(
+            {f for f in current if f in self.state and current[f] != self.state[f]}
+        )
+
+        self.state = current
+        return created, updated, deleted
+
+    def save_state(self):
+        """Save current state to file."""
+        with open(self.state_file, "w") as f:
+            json.dump(self.state, f, indent=4, sort_keys=True)
+
+
+def main():
+    print("running from {}".format(os.getcwd()), file=sys.stderr)
+
+    # Read previous checksums
+    deploy_dir = os.path.join(os.getcwd(), "site-deploy")
+    monitor = DirectoryMonitor(deploy_dir)
+
+    # Make a new build
+    print("running build step", file=sys.stderr)
+    run_command(main, shlex.split("python3 build.py"))
+
+    # See what's changed
+    created, updated, deleted = monitor.check_changes()
+    monitor.save_state()
+
+    # Create and run updater, invalidate
+    s3 = S3("www.haydnenthusiasts.org", deploy_dir)
+    cloudfront = CloudFront("EA8YGAHXI8LCE")
+
+    for label, files in [
+        ("created", created),
+        ("updated", updated),
+        ("deleted", deleted),
+    ]:
+        if files:
+            print(f"\n{label} ({len(files)}):", *files, sep="\n  ")
+            for file in files:
+                if label in {"created", "updated"}:
+                    s3.upload(file)
+                elif label == "deleted":
+                    s3.delete(file)
+
+            # Only need to invalidated updated files.
+            if label == "updated":
+                cloudfront.invalidate_paths(files)
+
+    if not any([created, updated, deleted]):
+        print("No changes detected.")
+
+    sys.exit(0)
+
+
+if __name__ == "__main__":
+    main()
