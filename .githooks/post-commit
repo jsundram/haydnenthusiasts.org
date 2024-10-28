@@ -59,11 +59,12 @@ class CloudFront:
     def __init__(self, distribution_id):
         self.distribution_id = distribution_id
 
-    def invalidate_paths(self, paths):
+    def invalidate_paths(self, files):
         command = shlex.split(
             f"aws cloudfront create-invalidation --distribution-id %s --paths"
             % self.distribution_id
         )
+        paths = [f"/{f}" for f in files if not f.startswith('/')]
         command.extend(paths)
         return run_command(self, command)
 
@@ -161,7 +162,6 @@ def main():
 
     # See what's changed
     created, updated, deleted = monitor.check_changes()
-    monitor.save_state()
 
     # Create and run updater, invalidate
     s3 = S3("www.haydnenthusiasts.org", deploy_dir)
@@ -184,6 +184,7 @@ def main():
             if label == "updated":
                 cloudfront.invalidate_paths(files)
 
+    monitor.save_state()  # only do this after we succeed.
     if not any([created, updated, deleted]):
         print("No changes detected.")
 
