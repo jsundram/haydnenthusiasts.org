@@ -154,6 +154,10 @@ def main():
 
     # Read previous checksums
     deploy_dir = os.path.join(os.getcwd(), "site-deploy")
+    try:
+        os.remove(os.path.join(deploy_dir, ".DS_Store"))
+    except FileNotFoundError:
+        pass
     monitor = DirectoryMonitor(deploy_dir)
 
     # Make a new build

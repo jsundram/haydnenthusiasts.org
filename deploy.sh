@@ -24,6 +24,7 @@ deploy_with_aws() {
 
 # Main logic
 cd site-deploy
+rm .DS_Store
 if command_exists s3cmd; then
     deploy_with_s3cmd
 elif command_exists aws; then
