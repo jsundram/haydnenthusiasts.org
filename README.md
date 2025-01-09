@@ -3,6 +3,13 @@ haydnenthusiasts.org
 
 Haydn Enthusiasts website. [Visit it](http://haydnenthusiasts.org/).
 
+### to clone:
+```
+git clone "https://github.com/jsundram/haydnenthusiasts.org"
+cd haydnenthusiasts.org
+git submodule update --init --recursive
+```
+
 ### to build:
 ```
 python3 build.py
