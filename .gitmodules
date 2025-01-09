@@ -1,0 +1,3 @@
+[submodule "external/haydn-info-card"]
+	path = external/haydn-info-card
+	url = https://github.com/jsundram/haydn-info-card/
