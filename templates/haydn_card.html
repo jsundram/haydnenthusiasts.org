@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}Haydn Info Card{% endblock %}
+
+{% block meta %}
+{{ super() }}
+<meta property="og:title" content="Haydn Info Card"/>
+<meta property="og:description" content="The Haydn Info Card is a printable card that gives you the most important Haydn Quartet facts at a glance"/>
+{% endblock %}
+
+{% block content %}
+<style>
+#text {
+    margin: 20px;
+    font-size: 14px;
+    line-height: 20px;
+}
+</style>
+
+<div id="title">
+    <h1>Haydn Info Card</h1>
+</div>
+
+<p id="infocard">
+    <div id="text">
+        The <a href="./static/info-card/{{card}}">Haydn Info Card</a> is meant 
+        to be printed and carried around with you, or perhaps stuck to your fridge. 
+        It aims to to be a kind of <i>"periodic table of Haydn Quartets"</i> and  
+        each of the boxes with colored stripes will help remind you of:
+        <ul>
+            <li>Various nicknames (both widely known and those used primarily by The Enthusiasts)</li>
+            <li>What key each quartet is in</li>
+            <li>Which quartets are in minor keys (with a few exceptions, each row in the table has exactly one minor quartet)</li> 
+            <li>How many movements are in each work, indicated by number of sides: The pentagons indicate 5 movements, the squares 4, and the sadly unfinished Opus 103 has but 2 movements completed</li>
+            <li>Where the minuet is positioned (Haydn began by writing 2 minuets for all the Opus 1 and Opus 2 quartets, and began placing the minuet after the first movement but later composed more quartets where the minuet falls just before the final movement)</li>
+            <li>Which volume of the <a href="https://github.com/jsundram/haydn-canon/blob/main/README.md">4-volume Peters Edition</a> each quartet is found in</li> 
+        </ul>
+        And more! The "Cell Anatomy" inset explains how the information is packed. The boxes to the left of each opus group contain the year, the patron/dedicatee/opus group nickname (if any), and Haydn's age at the time of composition (to save you from subtracting 1732 from the year). Here's a preview of the front of the card. 
+        <br><br>
+        <!-- annotation.png Aspect ratio is 1271 (w) x 1182 (h) -->
+        <!--<img src="/assets/haydn-info-card-annotation.png" width="442" height="411" alt="Explaining each cell"></img>-->
+
+        <!-- Aspect ratio is 1632 (w) x 2112 (h), reduces to 17x22 -->
+        <img src="/assets/haydn-info-card-front.png" width="442" height="572" alt="Preview of the front of the card"></img>
+
+        <br><br>
+        The rear of the card contains this timeline, which can help keep track of how important quartet dates in Haydn's life relates
+        to those in Mozart's and Beethoven's. Some interesting things leap out from this timeline:
+        <ul>
+            <li>Haydn's first quartets were being produced around the same time Mozart was born</li>
+            <li>Opus 17 was written around the same time Beethoven was born</li>
+            <li>Haydn's substantial pause in quartet output after Mozart's dedication of 6 quartets to him</li>
+            <li>Haydn's 6 "Prussian" quartets (Opus 50), followed 2 years later by <a href="https://en.wikipedia.org/wiki/Prussian_Quartets_(Mozart)">Mozart's 3</a>, all dedicated to <a href="https://en.wikipedia.org/wiki/Frederick_William_II_of_Prussia">the King of Prussia</a>.</li>
+            <li>Mozart's tragic death while Haydn was away on his first trip to London</li>
+            <li>Haydn's production of Opus 71/74 perhaps as a response to his first trip to London and in preparation for his second</li>
+            <li>Haydn's final, incomplete set of Opus 77 quartets, and Beethoven's first set of quartets, Opus 18, both dedicated to <a href="https://en.wikipedia.org/wiki/Joseph_Franz_von_Lobkowitz">Prince Lobkowitz</a></li>
+            <li>The fact that Haydn was alive during the time that his pupil, Beethoven, produced his fierce "Middle" quartets!</li>
+        </ul>
+        <!-- Aspect ratio is 1632 (w) x 461 (h) -->
+        Here's preview of the timeline: <br>
+        <img src="/assets/haydn-info-card-timeline.png" width="442" height="125" alt="Haydn Quartet Timeline"></img>
+        <br><br>
+        <hr>
+        The latest version of the card, suitable for printing double-sided on letter-sized paper can be found <a href="./static/info-card/{{card}}">here</a>.
+        <br>
+        The code and data that was used to generate the card can be found <a href="https://github.com/jsundram/haydn-info-card">on Github</a>.
+    </div>
+    <br style="clear: both;" />
+</p>
+
+{% endblock %}
