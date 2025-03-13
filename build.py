@@ -13,6 +13,7 @@ SITE: the configuration of the site. structure is
 
 from glob import glob
 from jinja2 import Environment, FileSystemLoader
+from pathlib import Path
 from subprocess import call
 
 import os
@@ -48,6 +49,7 @@ def stage():
     print('copying static files')
     call(['cp', '-r', STATIC_ROOT, SITE_DEPLOY])
 
+
     # Make sure the latest cards are pulled in to this repo.
     call('git submodule update --remote external/haydn-info-card', shell=True)
 
@@ -56,6 +58,10 @@ def stage():
     for card in glob(CARD_FILES):
         shutil.copy(card, CARD_DESTINATION)
     print('copied info cards.')
+
+    # Get rid of these annoying files.
+    for ds_store in Path(SITE_DEPLOY).rglob('.DS_Store'):
+        ds_store.unlink()
 
 
 def render():
