@@ -64,7 +64,13 @@ class CloudFront:
             f"aws cloudfront create-invalidation --distribution-id %s --paths"
             % self.distribution_id
         )
-        paths = [f"/{f}" for f in files if not f.startswith('/')]
+        def safe(f):
+            """hypotheses:
+                1) cloudfront barfs on spaces and
+                2) plus is an ok substitute rather than doing a full urlencode?
+            """
+            return f.replace(' ', '+')
+        paths = [f"/{safe(f)}" for f in files if not f.startswith('/')]
         command.extend(paths)
         return run_command(self, command)
 
