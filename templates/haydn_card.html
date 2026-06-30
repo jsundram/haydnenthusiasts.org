@@ -14,16 +14,73 @@
     font-size: 14px;
     line-height: 20px;
 }
+
+.cta-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 24px 20px 8px 20px;
+}
+.cta {
+    flex: 1 1 280px;
+    display: block;
+    padding: 18px 22px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    text-decoration: none;
+    color: #333;
+    transition: box-shadow .15s ease, border-color .15s ease, background-color .15s ease;
+}
+.cta:hover {
+    text-decoration: none;
+    border-color: rgb(29, 145, 192);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.09);
+}
+.cta .cta-label {
+    display: block;
+    font-size: 18px;
+    font-weight: 400;
+    color: rgb(29, 145, 192);
+    margin-bottom: 4px;
+}
+.cta .cta-sub {
+    display: block;
+    font-size: 13px;
+    color: #666;
+}
+.cta-primary {
+    background-color: rgb(29, 145, 192);
+    border-color: rgb(29, 145, 192);
+}
+.cta-primary .cta-label,
+.cta-primary .cta-sub {
+    color: #fff;
+}
+.cta-primary:hover {
+    background-color: rgb(22, 122, 162);
+    border-color: rgb(22, 122, 162);
+}
 </style>
 
 <div id="title">
     <h1>Haydn Info Card</h1>
 </div>
 
+<div class="cta-bar">
+    <a class="cta cta-primary" href="./static/info-card/{{card}}">
+        <span class="cta-label">⬇&nbsp; Download the printable card</span>
+        <span class="cta-sub">PDF &middot; print double-sided on letter-sized paper</span>
+    </a>
+    <a class="cta" href="https://jsundram.github.io/haydn-info-card/" target="_blank">
+        <span class="cta-label">↗&nbsp; Explore the interactive version</span>
+        <span class="cta-sub">Browse it on screen, with Spotify links &amp; extras</span>
+    </a>
+</div>
+
 <p id="infocard">
     <div id="text">
-        The <a href="./static/info-card/{{card}}">Haydn Info Card</a> is meant 
-        to be printed and carried around with you, or perhaps stuck to your fridge. 
+        The <a href="./static/info-card/{{card}}">Haydn Info Card</a> is meant
+        to be printed and carried around with you, or perhaps stuck to your fridge.
         It aims to to be a kind of <i>"periodic table of Haydn Quartets"</i> and  
         each of the boxes with colored stripes will help remind you of:
         <ul>
